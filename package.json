@@ -6,11 +6,12 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test": "vitest",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"check-svelte": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check-lint": "pnpm eslint 'src/**/*.{ts,svelte}'",
+		"check-format": "pnpm prettier 'src/**/*.{ts,css,svelte}' --check",
+		"fix-lint": "pnpm eslint --fix 'src/**/*.{ts,svelte}'",
+		"fix-format": "pnpm prettier 'src/**/*.{ts,css,svelte}' --write"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
