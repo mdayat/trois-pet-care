@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Checking Svelte Code"
+pnpm check-svelte || {
+  echo "Svelte Code Check Failed"
+  false
+}
+
+echo "Checking Code Lint"
+pnpm check-lint || {
+  echo "Code Lint Check Failed"
+  false
+}
+
+echo "Checking Code Format"
+pnpm check-format || {
+  echo "Code Format Check Failed"
+  false
+}
