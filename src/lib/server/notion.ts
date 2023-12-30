@@ -14,15 +14,15 @@ interface Article {
 	coverUrl?: string;
 }
 
-interface Result {
+interface ArticleListResult {
 	articles: Array<Article>;
 	next_cursor?: string;
 }
 
 const notion = new Client({ auth: NOTION_KEY });
 
-const getArticles = (start_cursor: string | undefined) => {
-	const promise = new Promise<Result>((resolve, reject) => {
+const getArticles = (start_cursor?: string) => {
+	const promise = new Promise<ArticleListResult>((resolve, reject) => {
 		notion.databases
 			.query({
 				database_id: DATABASE_ID,
@@ -36,7 +36,7 @@ const getArticles = (start_cursor: string | undefined) => {
 				start_cursor: start_cursor,
 			})
 			.then((res) => {
-				const result: Result = {
+				const result: ArticleListResult = {
 					articles: [],
 				};
 
@@ -111,3 +111,4 @@ const getArticles = (start_cursor: string | undefined) => {
 };
 
 export { notion, getArticles };
+export type { ArticleListResult };
