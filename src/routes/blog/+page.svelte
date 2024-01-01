@@ -1,10 +1,18 @@
 <script lang="ts">
-	import type { ArticleListResult } from "$lib/server/notion";
+	import type { GetArticlesResponse } from "$lib/server/notion";
+	import CardArticle from "$lib/CardArticle.svelte";
 
-	export let data: ArticleListResult;
+	export let data: GetArticlesResponse;
+	let hasNextCursor = Object.hasOwn(data, "next_cursor");
+	let articleContainerEl: HTMLElement;
 
-	const loadMoreArticles = () => {
-		fetch(`/api/articles?start_cursor=${data.next_cursor}`)
+	const loadMoreArticles = (event: MouseEvent) => {
+		const buttonEl = event.currentTarget as HTMLButtonElement;
+		const apiURL = `/api/articles?start_cursor=${buttonEl.getAttribute(
+			"data-next-cursor"
+		)}`;
+
+		fetch(apiURL)
 			.then((res) => {
 				if (res.status === 500) {
 					return;
@@ -12,29 +20,44 @@
 
 				return res.json();
 			})
-			.then((res: ArticleListResult) => {
-				for (let i = 0; i < res.articles.length; i++) {
-					const liEl = document.createElement("li");
-					liEl.textContent = `${res.articles[i].title ?? "-"} ${
-						res.articles[i].author ?? "-"
-					}`;
+			.then((data: GetArticlesResponse) => {
+				if (Object.hasOwn(data, "next_cursor")) {
+					buttonEl.setAttribute("data-next-cursor", data.next_cursor as string);
+				} else {
+					hasNextCursor = false;
+				}
 
-					document.getElementById("article-list-container")?.appendChild(liEl);
+				for (let i = 0; i < data.articles.length; i++) {
+					new CardArticle({
+						target: articleContainerEl,
+						props: { article: data.articles[i] },
+					});
 				}
 			});
 	};
 </script>
 
 <main>
-	<ul id="article-list-container">
-		{#each data.articles as article}
-			<li>{article.title}</li>
-		{/each}
-	</ul>
+	<section>
+		<h1>Trois Pet Care Articles</h1>
 
-	{#if Object.hasOwn(data, "next_cursor")}
-		<button type="button" on:click={loadMoreArticles}>
-			Lihat lebih banyak
-		</button>
-	{/if}
+		<div
+			class="grid grid-cols-3 place-items-center gap-4"
+			bind:this={articleContainerEl}
+		>
+			{#each data.articles as article (article.id)}
+				<CardArticle {article} />
+			{/each}
+		</div>
+
+		{#if hasNextCursor}
+			<button
+				type="button"
+				data-next-cursor={data.next_cursor}
+				on:click={loadMoreArticles}
+			>
+				Lihat lebih banyak
+			</button>
+		{/if}
+	</section>
 </main>

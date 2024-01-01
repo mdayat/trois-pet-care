@@ -11,10 +11,10 @@ interface Article {
 	shortDescription?: string;
 	author?: string;
 	publishedDate?: string;
-	coverUrl?: string;
+	coverImageURL?: string;
 }
 
-interface ArticleListResult {
+interface GetArticlesResponse {
 	articles: Array<Article>;
 	next_cursor?: string;
 }
@@ -22,7 +22,7 @@ interface ArticleListResult {
 const notion = new Client({ auth: NOTION_KEY });
 
 const getArticles = (start_cursor?: string) => {
-	const promise = new Promise<ArticleListResult>((resolve, reject) => {
+	const promise = new Promise<GetArticlesResponse>((resolve, reject) => {
 		notion.databases
 			.query({
 				database_id: DATABASE_ID,
@@ -36,7 +36,7 @@ const getArticles = (start_cursor?: string) => {
 				start_cursor: start_cursor,
 			})
 			.then((res) => {
-				const result: ArticleListResult = {
+				const result: GetArticlesResponse = {
 					articles: [],
 				};
 
@@ -52,10 +52,17 @@ const getArticles = (start_cursor?: string) => {
 
 					// Assign page cover URL to "article" if available
 					if (pageObject.cover !== null) {
-						if (pageObject.cover.type === "external") {
-							article.coverUrl = pageObject.cover.external.url;
-						} else {
-							article.coverUrl = pageObject.cover.file.url;
+						switch (pageObject.cover.type) {
+							case "external": {
+								article.coverImageURL = pageObject.cover.external.url;
+
+								break;
+							}
+
+							case "file": {
+								article.coverImageURL = pageObject.cover.file.url;
+								break;
+							}
 						}
 					}
 
@@ -111,4 +118,4 @@ const getArticles = (start_cursor?: string) => {
 };
 
 export { notion, getArticles };
-export type { ArticleListResult };
+export type { GetArticlesResponse, Article };
