@@ -1,23 +1,10 @@
-import { APIResponseError, Client } from "@notionhq/client";
+import { Client } from "@notionhq/client";
 import { DATABASE_ID, NOTION_KEY } from "./config";
 import type {
 	PageObjectResponse,
 	RichTextItemResponse,
 } from "@notionhq/client/build/src/api-endpoints";
-
-interface Article {
-	id: string;
-	title?: string;
-	shortDescription?: string;
-	author?: string;
-	publishedDate?: string;
-	coverImageURL?: string;
-}
-
-interface GetArticlesResponse {
-	articles: Array<Article>;
-	next_cursor?: string;
-}
+import type { Article, GetArticlesResponse } from "../../types/article";
 
 const notion = new Client({ auth: NOTION_KEY });
 
@@ -55,7 +42,6 @@ const getArticles = (start_cursor?: string) => {
 						switch (pageObject.cover.type) {
 							case "external": {
 								article.coverImageURL = pageObject.cover.external.url;
-
 								break;
 							}
 
@@ -109,8 +95,8 @@ const getArticles = (start_cursor?: string) => {
 
 				resolve(result);
 			})
-			.catch((err: APIResponseError) => {
-				reject(err.message);
+			.catch(() => {
+				reject();
 			});
 	});
 

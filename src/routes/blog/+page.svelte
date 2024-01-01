@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { GetArticlesResponse } from "$lib/server/notion";
 	import CardArticle from "$lib/CardArticle.svelte";
+	import type { GetArticlesResponse } from "../../types/article";
 
 	export let data: GetArticlesResponse;
 	let hasNextCursor = Object.hasOwn(data, "next_cursor");

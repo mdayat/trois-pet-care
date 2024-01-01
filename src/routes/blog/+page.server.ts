@@ -8,8 +8,8 @@ export const load = () => {
 			.then((res) => {
 				resolve(res);
 			})
-			.catch((err) => {
-				resolve({ status: 500, message: err });
+			.catch(() => {
+				resolve({ status: 500 });
 			});
 	});
 
