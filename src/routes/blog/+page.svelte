@@ -1,8 +1,10 @@
 <script lang="ts">
 	import CardArticle from "$lib/CardArticle.svelte";
+	import OpenGraphMetaTags from "$lib/OpenGraphMetaTags.svelte";
+	import type { LayoutServerData } from "../$types";
 	import type { GetArticlesResponse } from "../../types/article";
 
-	export let data: GetArticlesResponse;
+	export let data: GetArticlesResponse & LayoutServerData;
 	let hasNextCursor = Object.hasOwn(data, "next_cursor");
 	let articleContainerEl: HTMLElement;
 
@@ -36,6 +38,19 @@
 			});
 	};
 </script>
+
+<svelte:head>
+	<title>Konten Edukasi Seputar Kesehatan Hewan</title>
+	<meta name="description" content="" />
+	<meta name="author" content="Trois Pet Care" />
+
+	<OpenGraphMetaTags
+		title="Konten Edukasi Seputar Kesehatan Hewan"
+		description=""
+		pageURL={data.pageURL}
+		imageURL=""
+	/>
+</svelte:head>
 
 <main>
 	<section>

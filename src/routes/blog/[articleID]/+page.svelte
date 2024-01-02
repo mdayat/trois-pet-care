@@ -1,10 +1,26 @@
 <script lang="ts">
 	import SvelteMarkdown from "svelte-markdown";
 	import { articleCoverImageAltFallback } from "$lib/utils";
-	import type { GetArticleResponse } from "../../../types/article";
+	import OpenGraphMetaTags from "$lib/OpenGraphMetaTags.svelte";
+	import type { Article, GetArticleResponse } from "../../../types/article";
+	import type { LayoutServerData } from "../../$types";
 
-	export let data: GetArticleResponse;
+	export let data: GetArticleResponse & Article & LayoutServerData;
 </script>
+
+<svelte:head>
+	<title>{data.title ?? `Artikel - ${data.id}`}</title>
+	<meta name="description" content={data.shortDescription ?? ""} />
+	<meta name="author" content={data.author ?? "Trois Pet Care"} />
+
+	<OpenGraphMetaTags
+		title={data.title ?? `Artikel - ${data.id}`}
+		description={data.shortDescription ?? ""}
+		pageURL={data.pageURL}
+		imageURL={data.coverImageURL ?? ""}
+		imageAlt={data.title ?? articleCoverImageAltFallback(data.id)}
+	/>
+</svelte:head>
 
 <main>
 	<article id="article-content">

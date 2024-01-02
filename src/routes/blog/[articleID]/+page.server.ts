@@ -1,12 +1,12 @@
 import { NotionToMarkdown } from "notion-to-md";
 import { notion } from "$lib/server/notion";
-import { parseArticleIDFromRouteParams } from "$lib/utils";
-import type {
-	PageObjectResponse,
-	RichTextItemResponse,
-} from "@notionhq/client/build/src/api-endpoints";
+import {
+	parseArticleIDFromRouteParams,
+	parsePageObjectProperties,
+} from "$lib/utils";
+import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import type { PageServerLoad } from "./$types";
-import type { GetArticleResponse } from "../../../types/article";
+import type { Article, GetArticleResponse } from "../../../types/article";
 
 export const prerender = false;
 
@@ -20,32 +20,38 @@ export const load: PageServerLoad = ({ params }) => {
 			notion.pages.retrieve({ page_id: articleID }),
 		])
 			.then((res) => {
-				const article: GetArticleResponse = {
+				const article: GetArticleResponse & Article = {
 					id: articleID,
 					contents: n2m.toMarkdownString(res[0]).parent,
 				};
 
 				const pageObject = res[1] as PageObjectResponse;
-				if (pageObject.cover !== null) {
-					switch (pageObject.cover.type) {
-						case "external": {
-							article.coverImageURL = pageObject.cover.external.url;
+				const properties = new Map(
+					Object.entries(parsePageObjectProperties(pageObject))
+				);
+
+				for (const [key, value] of properties) {
+					switch (key) {
+						case "title": {
+							article.title = value;
 							break;
 						}
-
-						case "file": {
-							article.coverImageURL = pageObject.cover.file.url;
+						case "shortDescription": {
+							article.shortDescription = value;
 							break;
 						}
-					}
-				}
-
-				if (pageObject.properties.title.type === "title") {
-					const richTextOfTitle = pageObject.properties.title
-						.title as Array<RichTextItemResponse>;
-
-					if (richTextOfTitle.length !== 0) {
-						article.title = richTextOfTitle[0].plain_text;
+						case "author": {
+							article.author = value;
+							break;
+						}
+						case "publishedDate": {
+							article.publishedDate = value;
+							break;
+						}
+						case "coverImageURL": {
+							article.coverImageURL = value;
+							break;
+						}
 					}
 				}
 

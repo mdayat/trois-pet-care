@@ -1,10 +1,8 @@
 import { Client } from "@notionhq/client";
 import { DATABASE_ID, NOTION_KEY } from "./config";
-import type {
-	PageObjectResponse,
-	RichTextItemResponse,
-} from "@notionhq/client/build/src/api-endpoints";
+import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import type { Article, GetArticlesResponse } from "../../types/article";
+import { parsePageObjectProperties } from "$lib/utils";
 
 const notion = new Client({ auth: NOTION_KEY });
 
@@ -13,6 +11,12 @@ const getArticles = (start_cursor?: string) => {
 		notion.databases
 			.query({
 				database_id: DATABASE_ID,
+				filter: {
+					property: "ready_to_publish",
+					checkbox: {
+						equals: true,
+					},
+				},
 				sorts: [
 					{
 						property: "published_date",
@@ -33,63 +37,7 @@ const getArticles = (start_cursor?: string) => {
 
 				for (let i = 0; i < res.results.length; i++) {
 					const pageObject = res.results[i] as PageObjectResponse;
-					const article: Article = {
-						id: pageObject.id,
-					};
-
-					// Assign page cover URL to "article" if available
-					if (pageObject.cover !== null) {
-						switch (pageObject.cover.type) {
-							case "external": {
-								article.coverImageURL = pageObject.cover.external.url;
-								break;
-							}
-
-							case "file": {
-								article.coverImageURL = pageObject.cover.file.url;
-								break;
-							}
-						}
-					}
-
-					// Assign page title to "article" if available
-					if (pageObject.properties.title.type === "title") {
-						const richTextOfTitle = pageObject.properties.title
-							.title as Array<RichTextItemResponse>;
-
-						if (richTextOfTitle.length !== 0) {
-							article.title = richTextOfTitle[0].plain_text;
-						}
-					}
-
-					// Assign page author to "article" if available
-					if (pageObject.properties.author.type === "rich_text") {
-						const richTextOfTitle = pageObject.properties.author
-							.rich_text as Array<RichTextItemResponse>;
-
-						if (richTextOfTitle.length !== 0) {
-							article.author = richTextOfTitle[0].plain_text;
-						}
-					}
-
-					// Assign page short_description to "article" if available
-					if (pageObject.properties.short_description.type === "rich_text") {
-						const richTextOfTitle = pageObject.properties.short_description
-							.rich_text as Array<RichTextItemResponse>;
-
-						if (richTextOfTitle.length !== 0) {
-							article.shortDescription = richTextOfTitle[0].plain_text;
-						}
-					}
-
-					// Assign page published_date to "article" if available
-					if (pageObject.properties.published_date.type === "date") {
-						if (pageObject.properties.published_date.date !== null) {
-							article.publishedDate =
-								pageObject.properties.published_date.date.start;
-						}
-					}
-
+					const article = parsePageObjectProperties(pageObject);
 					result.articles.push(article);
 				}
 

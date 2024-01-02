@@ -13,9 +13,7 @@ interface GetArticlesResponse {
 }
 
 interface GetArticleResponse {
-	id: string;
 	contents: string;
-	title?: string;
 	coverImageURL?: string;
 }
 
