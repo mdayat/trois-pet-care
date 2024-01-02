@@ -1,8 +1,9 @@
+import { NotionToMarkdown } from "notion-to-md";
 import { notion } from "$lib/server/notion";
 import { parseArticleIDFromRouteParams } from "$lib/utils";
 import type {
-	BlockObjectResponse,
 	PageObjectResponse,
+	RichTextItemResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 import type { PageServerLoad } from "./$types";
 import type { GetArticleResponse } from "../../../types/article";
@@ -10,16 +11,18 @@ import type { GetArticleResponse } from "../../../types/article";
 export const prerender = false;
 
 export const load: PageServerLoad = ({ params }) => {
-	const promise = new Promise((resolve) => {
-		const articleID = parseArticleIDFromRouteParams(params.articleID);
+	const n2m = new NotionToMarkdown({ notionClient: notion });
+	const articleID = parseArticleIDFromRouteParams(params.articleID);
 
+	const promise = new Promise((resolve) => {
 		Promise.all([
-			notion.blocks.children.list({ block_id: articleID }),
+			n2m.pageToMarkdown(articleID),
 			notion.pages.retrieve({ page_id: articleID }),
 		])
 			.then((res) => {
 				const article: GetArticleResponse = {
-					contents: res[0].results as BlockObjectResponse[],
+					id: articleID,
+					contents: n2m.toMarkdownString(res[0]).parent,
 				};
 
 				const pageObject = res[1] as PageObjectResponse;
@@ -34,6 +37,15 @@ export const load: PageServerLoad = ({ params }) => {
 							article.coverImageURL = pageObject.cover.file.url;
 							break;
 						}
+					}
+				}
+
+				if (pageObject.properties.title.type === "title") {
+					const richTextOfTitle = pageObject.properties.title
+						.title as Array<RichTextItemResponse>;
+
+					if (richTextOfTitle.length !== 0) {
+						article.title = richTextOfTitle[0].plain_text;
 					}
 				}
 

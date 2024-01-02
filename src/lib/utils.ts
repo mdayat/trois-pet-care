@@ -8,4 +8,12 @@ const parseArticleIDFromRouteParams = (paramsString: string) => {
 	return articleID.join("-");
 };
 
-export { joinStringToHyphen, parseArticleIDFromRouteParams };
+const articleCoverImageAltFallback = (articleID: string) => {
+	return `Deskripsi gambar untuk artikel dengan ID ${articleID}`;
+};
+
+export {
+	joinStringToHyphen,
+	parseArticleIDFromRouteParams,
+	articleCoverImageAltFallback,
+};

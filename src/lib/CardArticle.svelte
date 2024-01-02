@@ -1,12 +1,8 @@
 <script lang="ts">
 	import type { Article } from "./server/notion";
-	import { joinStringToHyphen } from "./utils";
+	import { articleCoverImageAltFallback, joinStringToHyphen } from "./utils";
 
 	export let article: Article;
-
-	const altImageFallback = (articleID: string) => {
-		return `Deskripsi gambar untuk artikel dengan ID ${articleID}`;
-	};
 
 	const focusToAnchor = (event: MouseEvent) => {
 		const articleEl = event.currentTarget as HTMLElement;
@@ -38,12 +34,12 @@
 	{#if article.coverImageURL}
 		<img
 			src={article.coverImageURL}
-			alt={article.title ?? altImageFallback(article.id)}
+			alt={article.title ?? articleCoverImageAltFallback(article.id)}
 			class="bg-zinc-300 w-[200px] h-[200px] object-cover object-center grid place-items-center"
 		/>
 	{:else}
 		<img
-			alt={article.title ?? altImageFallback(article.id)}
+			alt={article.title ?? articleCoverImageAltFallback(article.id)}
 			class="bg-zinc-300 w-[200px] h-[200px] object-cover object-center grid place-items-center"
 		/>
 	{/if}

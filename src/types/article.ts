@@ -1,5 +1,3 @@
-import type { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-
 interface Article {
 	id: string;
 	title?: string;
@@ -15,7 +13,9 @@ interface GetArticlesResponse {
 }
 
 interface GetArticleResponse {
-	contents: BlockObjectResponse[];
+	id: string;
+	contents: string;
+	title?: string;
 	coverImageURL?: string;
 }
 

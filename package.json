@@ -38,6 +38,8 @@
 		"vitest": "^1.0.0"
 	},
 	"dependencies": {
-		"@notionhq/client": "^2.2.14"
+		"@notionhq/client": "^2.2.14",
+		"notion-to-md": "^3.1.1",
+		"svelte-markdown": "^0.4.1"
 	}
 }
