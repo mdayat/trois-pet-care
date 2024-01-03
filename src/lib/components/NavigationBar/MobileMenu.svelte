@@ -2,6 +2,7 @@
 	import { fade } from "svelte/transition";
 	import { linear } from "svelte/easing";
 	import { trapFocus } from "$lib/actions/trapFocus";
+	import { clickOutside } from "$lib/actions/clickOutside";
 	import ChevronUp from "../icons/ChevronUp.svelte";
 
 	export let isMenuOpened: boolean;
@@ -33,7 +34,9 @@
 	class="basis-full flex flex-col justify-between mt-6 mb-4"
 	transition:fade={{ easing: linear, duration: 250 }}
 	use:trapFocus={{ trapFocusTrigger: btnMenu }}
+	use:clickOutside={{ excludedEls: btnMenu }}
 	on:pressESC={closeMenu}
+	on:clickOutside={closeMenu}
 >
 	<li>
 		<a href="/" class="text-neutral-50 text-lg font-bold py-2 block">Home</a>

@@ -2,6 +2,7 @@
 	import { linear } from "svelte/easing";
 	import { scale } from "svelte/transition";
 	import { trapFocus } from "$lib/actions/trapFocus";
+	import { clickOutside } from "$lib/actions/clickOutside";
 	import ChevronUp from "../icons/ChevronUp.svelte";
 
 	let isLayananMenuOpened: boolean;
@@ -53,7 +54,9 @@
 				use:trapFocus={{
 					trapFocusTrigger: btnLayananMenu,
 				}}
+				use:clickOutside={{ excludedEls: btnLayananMenu }}
 				on:pressESC={closeLayananMenu}
+				on:clickOutside={closeLayananMenu}
 			>
 				<li>
 					<a href="/" class="text-neutral-50 font-medium py-2.5 block">Home</a>
