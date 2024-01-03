@@ -2,7 +2,7 @@ import type {
 	PageObjectResponse,
 	RichTextItemResponse,
 } from "@notionhq/client/build/src/api-endpoints";
-import type { Article } from "../../types/article";
+import type { Article } from "../types/article";
 
 const joinStringToHyphen = (string: string, separator: string): string => {
 	return string.split(separator).join("-");

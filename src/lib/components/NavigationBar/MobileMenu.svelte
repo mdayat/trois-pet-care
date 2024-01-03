@@ -39,13 +39,20 @@
 	on:clickOutside={closeMenu}
 >
 	<li>
-		<a href="/" class="text-neutral-50 text-lg font-bold py-2 block">Home</a>
+		<a
+			href="/"
+			class="text-neutral-50 text-lg font-bold py-2 block"
+			on:click={closeMenu}
+		>
+			Home
+		</a>
 	</li>
 
 	<li>
 		<a
 			href="/tentang-kami"
 			class="text-neutral-50 text-lg font-bold py-2 block"
+			on:click={closeMenu}
 		>
 			Tentang Kami
 		</a>
@@ -70,7 +77,11 @@
 				on:pressESC={closeLayananMenu}
 			>
 				<li>
-					<a href="/" class="text-neutral-50 font-medium block py-2.5">
+					<a
+						href="/"
+						class="text-neutral-50 font-medium block py-2.5"
+						on:click={closeMenu}
+					>
 						Home
 					</a>
 				</li>
@@ -79,13 +90,18 @@
 					<a
 						href="/tentang-kami"
 						class="text-neutral-50 font-medium block py-2.5"
+						on:click={closeMenu}
 					>
 						Tentang Kami
 					</a>
 				</li>
 
 				<li>
-					<a href="/blog" class="text-neutral-50 font-medium block py-2.5">
+					<a
+						href="/blog"
+						class="text-neutral-50 font-medium block py-2.5"
+						on:click={closeMenu}
+					>
 						Blog
 					</a>
 				</li>
@@ -94,7 +110,11 @@
 	</li>
 
 	<li>
-		<a href="/blog" class="text-neutral-50 text-lg font-bold py-2 block">
+		<a
+			href="/blog"
+			class="text-neutral-50 text-lg font-bold py-2 block"
+			on:click={closeMenu}
+		>
 			Blog
 		</a>
 	</li>

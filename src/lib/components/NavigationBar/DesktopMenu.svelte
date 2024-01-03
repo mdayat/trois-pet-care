@@ -59,20 +59,31 @@
 				on:clickOutside={closeLayananMenu}
 			>
 				<li>
-					<a href="/" class="text-neutral-50 font-medium py-2.5 block">Home</a>
+					<a
+						href="/"
+						class="text-neutral-50 font-medium py-2.5 block"
+						on:click={closeLayananMenu}
+					>
+						Home
+					</a>
 				</li>
 
 				<li>
 					<a
 						href="/tentang-kami"
 						class="text-neutral-50 font-medium py-2.5 block"
+						on:click={closeLayananMenu}
 					>
 						Tentang Kami
 					</a>
 				</li>
 
 				<li>
-					<a href="/blog" class="text-neutral-50 font-medium py-2.5 block">
+					<a
+						href="/blog"
+						class="text-neutral-50 font-medium py-2.5 block"
+						on:click={closeLayananMenu}
+					>
 						Blog
 					</a>
 				</li>

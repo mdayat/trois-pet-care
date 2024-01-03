@@ -1,6 +1,6 @@
 import { Client } from "@notionhq/client";
 import { DATABASE_ID, NOTION_KEY } from "./config";
-import { parsePageObjectProperties } from "$lib/server/utils";
+import { parsePageObjectProperties } from "$lib/utils";
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import type { Article, GetArticlesResponse } from "../../types/article";
 

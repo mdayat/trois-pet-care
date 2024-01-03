@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SvelteMarkdown from "svelte-markdown";
 	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
-	import { articleCoverImageAltFallback } from "$lib/server/utils";
+	import { articleCoverImageAltFallback } from "$lib/utils";
 	import type { Article, GetArticleResponse } from "../../../types/article";
 	import type { LayoutServerData } from "../../$types";
 
