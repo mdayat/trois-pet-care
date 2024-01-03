@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Article } from "./server/notion";
-	import { articleCoverImageAltFallback, joinStringToHyphen } from "./utils";
+	import type { Article } from "../server/notion";
+	import { articleCoverImageAltFallback, joinStringToHyphen } from "../utils";
 
 	export let article: Article;
 

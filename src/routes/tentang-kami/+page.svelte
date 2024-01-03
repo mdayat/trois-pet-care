@@ -1,5 +1,5 @@
 <script lang="ts">
-	import OpenGraphMetaTags from "$lib/OpenGraphMetaTags.svelte";
+	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
 	import type { LayoutServerData } from "../$types";
 
 	export let data: LayoutServerData;

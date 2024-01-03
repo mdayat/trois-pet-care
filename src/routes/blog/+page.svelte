@@ -1,6 +1,6 @@
 <script lang="ts">
-	import CardArticle from "$lib/CardArticle.svelte";
-	import OpenGraphMetaTags from "$lib/OpenGraphMetaTags.svelte";
+	import CardArticle from "$lib/components/CardArticle.svelte";
+	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
 	import type { LayoutServerData } from "../$types";
 	import type { GetArticlesResponse } from "../../types/article";
 
