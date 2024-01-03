@@ -3,7 +3,7 @@ import { notion } from "$lib/server/notion";
 import {
 	parseArticleIDFromRouteParams,
 	parsePageObjectProperties,
-} from "$lib/utils";
+} from "$lib/server/utils";
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import type { PageServerLoad } from "./$types";
 import type { Article, GetArticleResponse } from "../../../types/article";

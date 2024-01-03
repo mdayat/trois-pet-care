@@ -1,22 +1,39 @@
 <script lang="ts">
 	import { fade } from "svelte/transition";
 	import { linear } from "svelte/easing";
+	import { trapFocus } from "$lib/actions/trapFocus";
 	import ChevronUp from "../icons/ChevronUp.svelte";
 
+	export let isMenuOpened: boolean;
 	export let isLayananMenuOpened: boolean;
+	export let btnMenu: HTMLButtonElement;
+	let btnLayananMenu: HTMLButtonElement;
 
-	const openLayananMenu = () => {
+	const toggleLayananMenu = () => {
 		if (isLayananMenuOpened) {
 			isLayananMenuOpened = false;
 		} else {
 			isLayananMenuOpened = true;
 		}
 	};
+
+	const closeMenu = () => {
+		isMenuOpened = false;
+		if (isLayananMenuOpened) {
+			isLayananMenuOpened = false;
+		}
+	};
+
+	const closeLayananMenu = () => {
+		isLayananMenuOpened = false;
+	};
 </script>
 
 <ul
 	class="basis-full flex flex-col justify-between mt-6 mb-4"
 	transition:fade={{ easing: linear, duration: 250 }}
+	use:trapFocus={{ trapFocusTrigger: btnMenu }}
+	on:pressESC={closeMenu}
 >
 	<li>
 		<a href="/" class="text-neutral-50 text-lg font-bold py-2 block">Home</a>
@@ -35,7 +52,8 @@
 		<button
 			type="button"
 			class="text-neutral-50 text-lg font-bold py-2 flex justify-between items-center gap-x-2.5"
-			on:click={openLayananMenu}
+			on:click={toggleLayananMenu}
+			bind:this={btnLayananMenu}
 		>
 			Layanan
 			<ChevronUp {isLayananMenuOpened} />
@@ -45,6 +63,8 @@
 			<ul
 				class="flex flex-col justify-between ml-4"
 				transition:fade={{ easing: linear, duration: 250 }}
+				use:trapFocus={{ trapFocusTrigger: btnLayananMenu }}
+				on:pressESC={closeLayananMenu}
 			>
 				<li>
 					<a href="/" class="text-neutral-50 font-medium block py-2.5">

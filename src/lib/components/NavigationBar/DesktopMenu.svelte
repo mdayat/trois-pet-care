@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { linear } from "svelte/easing";
 	import { scale } from "svelte/transition";
+	import { trapFocus } from "$lib/actions/trapFocus";
 	import ChevronUp from "../icons/ChevronUp.svelte";
 
 	let isLayananMenuOpened: boolean;
+	let btnLayananMenu: HTMLButtonElement;
 
 	const openLayananMenu = () => {
 		if (isLayananMenuOpened) {
@@ -11,6 +13,10 @@
 		} else {
 			isLayananMenuOpened = true;
 		}
+	};
+
+	const closeLayananMenu = () => {
+		isLayananMenuOpened = false;
 	};
 </script>
 
@@ -30,6 +36,7 @@
 			type="button"
 			class="text-neutral-50 font-bold py-2.5 flex justify-between items-center gap-x-2.5"
 			on:click={openLayananMenu}
+			bind:this={btnLayananMenu}
 		>
 			Layanan
 			<ChevronUp {isLayananMenuOpened} />
@@ -43,6 +50,10 @@
 					duration: 250,
 					start: 0.85,
 				}}
+				use:trapFocus={{
+					trapFocusTrigger: btnLayananMenu,
+				}}
+				on:pressESC={closeLayananMenu}
 			>
 				<li>
 					<a href="/" class="text-neutral-50 font-medium py-2.5 block">Home</a>

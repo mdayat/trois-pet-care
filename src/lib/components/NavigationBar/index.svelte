@@ -6,17 +6,21 @@
 	let innerWidth: number;
 	let isMenuOpened: boolean;
 	let isLayananMenuOpened: boolean;
+	let btnMenu: HTMLButtonElement;
 
-	const openMenu = () => {
+	const toggleMenu = () => {
 		if (isMenuOpened) {
-			if (isLayananMenuOpened) {
-				isLayananMenuOpened = false;
-			}
-
 			isMenuOpened = false;
-		} else {
-			isMenuOpened = true;
+			return;
 		}
+
+		if (isMenuOpened && isLayananMenuOpened) {
+			isMenuOpened = false;
+			isLayananMenuOpened = false;
+			return;
+		}
+
+		isMenuOpened = true;
 	};
 </script>
 
@@ -29,12 +33,17 @@
 		<img src="/favicon.png" alt="Logo Trois Pet Care" class="w-10 lg:w-12" />
 
 		{#if innerWidth < 1024}
-			<button type="button" class="p-2" on:click={openMenu}>
+			<button
+				type="button"
+				class="p-2"
+				bind:this={btnMenu}
+				on:click={toggleMenu}
+			>
 				<Bars />
 			</button>
 
 			{#if isMenuOpened}
-				<MobileMenu {isLayananMenuOpened} />
+				<MobileMenu {btnMenu} bind:isMenuOpened bind:isLayananMenuOpened />
 			{/if}
 		{/if}
 
