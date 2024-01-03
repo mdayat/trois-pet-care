@@ -18,6 +18,6 @@
 	/>
 </svelte:head>
 
-<main>
+<main class="mt-[calc(60px)]">
 	<h1>Hello From Home Page</h1>
 </main>

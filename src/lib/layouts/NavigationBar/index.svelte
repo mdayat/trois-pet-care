@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Bars from "../icons/Bars.svelte";
+	import Bars from "../../components/icons/Bars.svelte";
 	import DesktopMenu from "./DesktopMenu.svelte";
 	import MobileMenu from "./MobileMenu.svelte";
 
@@ -22,13 +22,19 @@
 
 		isMenuOpened = true;
 	};
+
+	$: if (innerWidth >= 1024) {
+		if (isMenuOpened) {
+			isMenuOpened = false;
+		}
+	}
 </script>
 
 <svelte:window bind:innerWidth />
 
-<nav class="bg-green-600 fixed top-0 left-0 right-0">
+<nav class="base-padding bg-green-600 fixed top-0 left-0 right-0">
 	<div
-		class="flex flex-wrap justify-between items-center mx-8 py-2 lg:py-3 lg:mx-20 xl:mx-24 2xl:mx-28"
+		class="max-width flex flex-wrap justify-between items-center py-2 lg:py-3"
 	>
 		<img src="/favicon.png" alt="Logo Trois Pet Care" class="w-10 lg:w-12" />
 

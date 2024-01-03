@@ -3,7 +3,7 @@
 	import { scale } from "svelte/transition";
 	import { trapFocus } from "$lib/actions/trapFocus";
 	import { clickOutside } from "$lib/actions/clickOutside";
-	import ChevronUp from "../icons/ChevronUp.svelte";
+	import ChevronUp from "../../components/icons/ChevronUp.svelte";
 
 	let isLayananMenuOpened: boolean;
 	let btnLayananMenu: HTMLButtonElement;

@@ -22,7 +22,7 @@
 	/>
 </svelte:head>
 
-<main>
+<main class="mt-[calc(60px)]">
 	<article id="article-content">
 		{#if data.coverImageURL}
 			<img

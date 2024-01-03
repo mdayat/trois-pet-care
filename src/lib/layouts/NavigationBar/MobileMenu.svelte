@@ -3,7 +3,7 @@
 	import { linear } from "svelte/easing";
 	import { trapFocus } from "$lib/actions/trapFocus";
 	import { clickOutside } from "$lib/actions/clickOutside";
-	import ChevronUp from "../icons/ChevronUp.svelte";
+	import ChevronUp from "../../components/icons/ChevronUp.svelte";
 
 	export let isMenuOpened: boolean;
 	export let isLayananMenuOpened: boolean;
