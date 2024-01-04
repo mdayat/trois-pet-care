@@ -18,6 +18,6 @@
 	/>
 </svelte:head>
 
-<main class="mt-[calc(60px)]">
+<main class="mt-[calc(60px)] lg:mt-[calc(72px)]">
 	<h1>Hello From Tentang Kami Page</h1>
 </main>

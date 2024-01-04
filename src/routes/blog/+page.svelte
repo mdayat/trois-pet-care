@@ -52,7 +52,7 @@
 	/>
 </svelte:head>
 
-<main class="mt-[calc(60px)]">
+<main class="mt-[calc(60px)] lg:mt-[calc(72px)]">
 	<section>
 		<h1>Trois Pet Care Articles</h1>
 
