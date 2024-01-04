@@ -1,18 +1,18 @@
 <script lang="ts">
 	import CardArticle from "$lib/components/CardArticle.svelte";
+	import LoaderSpinner from "$lib/components/LoaderSpinner.svelte";
 	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
 	import type { LayoutServerData } from "../$types";
 	import type { GetArticlesResponse } from "../../types/article";
 
 	export let data: GetArticlesResponse & LayoutServerData;
-	let hasNextCursor = Object.hasOwn(data, "next_cursor");
+	let isLoading = false;
+	let nextCursor = data.next_cursor ?? "";
 	let articleContainerEl: HTMLElement;
 
-	const loadMoreArticles = (event: MouseEvent) => {
-		const buttonEl = event.currentTarget as HTMLButtonElement;
-		const apiURL = `/api/articles?start_cursor=${buttonEl.getAttribute(
-			"data-next-cursor"
-		)}`;
+	const loadMoreArticles = () => {
+		isLoading = true;
+		const apiURL = `/api/articles?start_cursor=${nextCursor}`;
 
 		fetch(apiURL)
 			.then((res) => {
@@ -23,10 +23,11 @@
 				return res.json();
 			})
 			.then((data: GetArticlesResponse) => {
+				isLoading = false;
 				if (Object.hasOwn(data, "next_cursor")) {
-					buttonEl.setAttribute("data-next-cursor", data.next_cursor as string);
+					nextCursor = data.next_cursor as string;
 				} else {
-					hasNextCursor = false;
+					nextCursor = "";
 				}
 
 				for (let i = 0; i < data.articles.length; i++) {
@@ -52,27 +53,46 @@
 	/>
 </svelte:head>
 
-<main class="mt-[calc(60px)] lg:mt-[calc(72px)]">
-	<section>
-		<h1>Trois Pet Care Articles</h1>
-
-		<div
-			class="grid grid-cols-3 place-items-center gap-4"
-			bind:this={articleContainerEl}
+<main
+	class="base-margin max-width mt-[calc(60px+64px)] mb-16 lg:mt-[calc(72px+80px)]"
+>
+	<article class="w-80 mx-auto mb-8 lg:w-[512px]">
+		<h1
+			aria-label="Artikel Trois Pet Care"
+			class="font-bold text-center text-2xl mb-4"
 		>
-			{#each data.articles as article (article.id)}
-				<CardArticle {article} />
-			{/each}
-		</div>
+			Artikel
+		</h1>
 
-		{#if hasNextCursor}
+		<p>
+			Kamu punya anabul? Kalau iya, yuk tingkatkan pengetahuan kamu seputar <strong
+			>
+				kesehatan hewan peliharaan
+			</strong>
+			melalui artikel kami.
+		</p>
+	</article>
+
+	<div
+		class="flex flex-wrap justify-center items-center gap-6"
+		bind:this={articleContainerEl}
+	>
+		{#each data.articles as article (article.id)}
+			<CardArticle {article} />
+		{/each}
+	</div>
+
+	{#if nextCursor !== ""}
+		{#if isLoading}
+			<LoaderSpinner />
+		{:else}
 			<button
 				type="button"
-				data-next-cursor={data.next_cursor}
+				class="text-green-600 font-bold border-2 border-green-600 py-3 px-4 rounded-md block w-fit mx-auto mt-8 hover:bg-green-600/15 active:bg-green-600/15 transition-all duration-250"
 				on:click={loadMoreArticles}
 			>
 				Lihat lebih banyak
 			</button>
 		{/if}
-	</section>
+	{/if}
 </main>

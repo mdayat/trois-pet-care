@@ -24,36 +24,47 @@
 			?.lastElementChild as HTMLAnchorElement;
 		anchor.blur();
 	};
+
+	const triggerClickOnTouch = (event: TouchEvent) => {
+		const anchor = (event.currentTarget as HTMLElement).lastElementChild
+			?.lastElementChild as HTMLAnchorElement;
+		anchor.click();
+	};
 </script>
 
 <article
-	class="border-2 border-blue-600 cursor-pointer"
+	class="bg-zinc-200 shadow-lg rounded-xl cursor-pointer max-w-80 h-fit p-4"
 	on:mouseenter={focusToAnchor}
 	on:mouseleave={blurFromAnchor}
+	on:touchstart={triggerClickOnTouch}
 >
 	{#if article.coverImageURL}
 		<img
 			src={article.coverImageURL}
 			alt={article.title ?? articleCoverImageAltFallback(article.id)}
-			class="bg-zinc-300 w-[200px] h-[200px] object-cover object-center grid place-items-center"
+			class="bg-zinc-300 w-full h-44 object-cover object-center rounded-lg mb-4"
 		/>
 	{:else}
 		<img
 			alt={article.title ?? articleCoverImageAltFallback(article.id)}
-			class="bg-zinc-300 w-[200px] h-[200px] object-cover object-center grid place-items-center"
+			class="bg-zinc-300 w-full h-44 object-cover object-center rounded-lg mb-4"
 		/>
 	{/if}
 
 	<div>
-		<h2>{article.title ?? `Artikel dengan ID ${article.id}`}</h2>
+		<h2 class="font-semibold text-lg mb-2">
+			{article.title ?? `Artikel dengan ID ${article.id}`}
+		</h2>
 
 		{#if Object.hasOwn(article, "shortDescription")}
-			<p>{article.shortDescription}</p>
+			<p class="mb-6 truncate-text">
+				{article.shortDescription}
+			</p>
 		{/if}
 
-		<p>
-			<span>{article.author ?? "-"}</span>
-			<span>{article.publishedDate ?? "-"}</span>
+		<p class="text-sm flex justify-between items-center">
+			<span class="font-semibold">{article.author ?? "-"}</span>
+			<span class="text-zinc-500">{article.publishedDate ?? "-"}</span>
 		</p>
 
 		{#if article.title}
@@ -73,3 +84,12 @@
 		{/if}
 	</div>
 </article>
+
+<style lang="postcss">
+	.truncate-text {
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+</style>
