@@ -14,4 +14,8 @@
 	.max-width {
 		@apply max-w-[calc(1536px-112px)] 2xl:mx-auto;
 	}
+
+	.menu-item-on-hover {
+		@apply text-neutral-content hover:text-primary transition-colors duration-250;
+	}
 }

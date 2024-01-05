@@ -27,9 +27,7 @@
 		<a
 			href="/"
 			class={`font-bold py-2.5 block ${
-				$page.url.pathname === "/"
-					? "text-primary"
-					: "text-neutral-content hover:text-primary transition-colors duration-250"
+				$page.url.pathname === "/" ? "text-primary" : "menu-item-on-hover"
 			}`}
 		>
 			Home
@@ -42,7 +40,7 @@
 			class={`font-bold py-2.5 block ${
 				$page.url.pathname === "/tentang-kami"
 					? "text-primary"
-					: "text-neutral-content hover:text-primary transition-colors duration-250"
+					: "menu-item-on-hover"
 			}`}
 		>
 			Tentang Kami
@@ -55,7 +53,7 @@
 			class={`font-bold py-2.5 group flex justify-between items-center gap-x-2.5 ${
 				$page.url.pathname.includes("/layanan")
 					? "text-primary"
-					: "text-neutral-content hover:text-primary transition-colors duration-250"
+					: "menu-item-on-hover"
 			}`}
 			on:click={openLayananMenu}
 			bind:this={btnLayananMenu}
@@ -88,7 +86,7 @@
 						class={`font-medium py-2.5 block ${
 							$page.url.pathname.includes("/layanan")
 								? "text-primary"
-								: "text-neutral-content hover:text-primary transition-colors duration-250"
+								: "menu-item-on-hover"
 						}`}
 						on:click={closeLayananMenu}
 					>
@@ -102,7 +100,7 @@
 						class={`font-medium py-2.5 block ${
 							$page.url.pathname.includes("/layanan")
 								? "text-primary"
-								: "text-neutral-content hover:text-primary transition-colors duration-250"
+								: "menu-item-on-hover"
 						}`}
 						on:click={closeLayananMenu}
 					>
@@ -116,7 +114,7 @@
 						class={`font-medium py-2.5 block ${
 							$page.url.pathname.includes("/layanan")
 								? "text-primary"
-								: "text-neutral-content hover:text-primary transition-colors duration-250"
+								: "menu-item-on-hover"
 						}`}
 						on:click={closeLayananMenu}
 					>
@@ -133,7 +131,7 @@
 			class={`font-bold py-2.5 block min-w-11 ${
 				$page.url.pathname === "/blog" || $page.url.pathname.includes("/blog")
 					? "text-primary"
-					: "text-neutral-content hover:text-primary transition-colors duration-250"
+					: "menu-item-on-hover"
 			}`}
 		>
 			Blog

@@ -33,7 +33,7 @@
 </script>
 
 <article
-	class="bg-base-200 shadow-lg rounded-xl cursor-pointer max-w-80 h-fit p-4"
+	class="group bg-base-200 shadow-lg rounded-xl cursor-pointer max-w-80 h-fit p-4"
 	on:mouseenter={focusToAnchor}
 	on:mouseleave={blurFromAnchor}
 	on:touchstart={triggerClickOnTouch}
@@ -52,7 +52,7 @@
 	{/if}
 
 	<div>
-		<h2 class="text-base-content font-semibold text-lg mb-2">
+		<h2 class="group-hover:link text-base-content font-semibold text-lg mb-2">
 			{article.title ?? `Artikel dengan ID ${article.id}`}
 		</h2>
 

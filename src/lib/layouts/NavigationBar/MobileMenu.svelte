@@ -43,9 +43,7 @@
 		<a
 			href="/"
 			class={`text-lg font-bold py-2 block ${
-				$page.url.pathname === "/"
-					? "text-primary"
-					: "text-neutral-content hover:text-primary transition-colors duration-250"
+				$page.url.pathname === "/" ? "text-primary" : "menu-item-on-hover"
 			}`}
 			on:click={closeMenu}
 		>
@@ -59,7 +57,7 @@
 			class={`text-lg font-bold py-2 block ${
 				$page.url.pathname === "/tentang-kami"
 					? "text-primary"
-					: "text-neutral-content hover:text-primary transition-colors duration-250"
+					: "menu-item-on-hover"
 			}`}
 			on:click={closeMenu}
 		>
@@ -73,7 +71,7 @@
 			class={`text-lg font-bold py-2 group flex justify-between items-center gap-x-2.5 ${
 				$page.url.pathname.includes("/layanan")
 					? "text-primary"
-					: "text-neutral-content hover:text-primary transition-colors duration-250"
+					: "menu-item-on-hover"
 			}`}
 			on:click={toggleLayananMenu}
 			bind:this={btnLayananMenu}
@@ -95,7 +93,7 @@
 				<li>
 					<a
 						href="/"
-						class="text-neutral-50 font-medium block py-2.5"
+						class="menu-item-on-hover font-medium block py-2.5"
 						on:click={closeMenu}
 					>
 						Home
@@ -105,7 +103,7 @@
 				<li>
 					<a
 						href="/tentang-kami"
-						class="text-neutral-50 font-medium block py-2.5"
+						class="menu-item-on-hover font-medium block py-2.5"
 						on:click={closeMenu}
 					>
 						Tentang Kami
@@ -115,7 +113,7 @@
 				<li>
 					<a
 						href="/blog"
-						class="text-neutral-50 font-medium block py-2.5"
+						class="menu-item-on-hover font-medium block py-2.5"
 						on:click={closeMenu}
 					>
 						Blog
@@ -131,7 +129,7 @@
 			class={`text-lg font-bold py-2 block ${
 				$page.url.pathname === "/blog" || $page.url.pathname.includes("/blog")
 					? "text-primary"
-					: "text-neutral-content hover:text-primary transition-colors duration-250"
+					: "menu-item-on-hover"
 			}`}
 			on:click={closeMenu}
 		>
