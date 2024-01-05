@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from "$app/stores";
 	import { fade } from "svelte/transition";
 	import { linear } from "svelte/easing";
 	import { trapFocus } from "$lib/actions/trapFocus";
@@ -41,7 +42,11 @@
 	<li>
 		<a
 			href="/"
-			class="text-neutral-50 text-lg font-bold py-2 block"
+			class={`text-lg font-bold py-2 block ${
+				$page.url.pathname === "/"
+					? "text-primary"
+					: "text-neutral-content hover:text-primary transition-colors duration-250"
+			}`}
 			on:click={closeMenu}
 		>
 			Home
@@ -51,7 +56,11 @@
 	<li>
 		<a
 			href="/tentang-kami"
-			class="text-neutral-50 text-lg font-bold py-2 block"
+			class={`text-lg font-bold py-2 block ${
+				$page.url.pathname === "/tentang-kami"
+					? "text-primary"
+					: "text-neutral-content hover:text-primary transition-colors duration-250"
+			}`}
 			on:click={closeMenu}
 		>
 			Tentang Kami
@@ -61,12 +70,19 @@
 	<li>
 		<button
 			type="button"
-			class="text-neutral-50 text-lg font-bold py-2 flex justify-between items-center gap-x-2.5"
+			class={`text-lg font-bold py-2 group flex justify-between items-center gap-x-2.5 ${
+				$page.url.pathname.includes("/layanan")
+					? "text-primary"
+					: "text-neutral-content hover:text-primary transition-colors duration-250"
+			}`}
 			on:click={toggleLayananMenu}
 			bind:this={btnLayananMenu}
 		>
 			Layanan
-			<ChevronUp {isLayananMenuOpened} />
+			<ChevronUp
+				{isLayananMenuOpened}
+				isCurrentPage={$page.url.pathname.includes("/layanan")}
+			/>
 		</button>
 
 		{#if isLayananMenuOpened}
@@ -112,7 +128,11 @@
 	<li>
 		<a
 			href="/blog"
-			class="text-neutral-50 text-lg font-bold py-2 block"
+			class={`text-lg font-bold py-2 block ${
+				$page.url.pathname === "/blog" || $page.url.pathname.includes("/blog")
+					? "text-primary"
+					: "text-neutral-content hover:text-primary transition-colors duration-250"
+			}`}
 			on:click={closeMenu}
 		>
 			Blog

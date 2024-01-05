@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from "$app/stores";
 	import { linear } from "svelte/easing";
 	import { scale } from "svelte/transition";
 	import { trapFocus } from "$lib/actions/trapFocus";
@@ -23,11 +24,27 @@
 
 <ul class="flex justify-between gap-x-6 xl:gap-x-8">
 	<li>
-		<a href="/" class="text-neutral-50 font-bold py-2.5 block">Home</a>
+		<a
+			href="/"
+			class={`font-bold py-2.5 block ${
+				$page.url.pathname === "/"
+					? "text-primary"
+					: "text-neutral-content hover:text-primary transition-colors duration-250"
+			}`}
+		>
+			Home
+		</a>
 	</li>
 
 	<li>
-		<a href="/tentang-kami" class="text-neutral-50 font-bold py-2.5 block">
+		<a
+			href="/tentang-kami"
+			class={`font-bold py-2.5 block ${
+				$page.url.pathname === "/tentang-kami"
+					? "text-primary"
+					: "text-neutral-content hover:text-primary transition-colors duration-250"
+			}`}
+		>
 			Tentang Kami
 		</a>
 	</li>
@@ -35,17 +52,24 @@
 	<li class="relative">
 		<button
 			type="button"
-			class="text-neutral-50 font-bold py-2.5 flex justify-between items-center gap-x-2.5"
+			class={`font-bold py-2.5 group flex justify-between items-center gap-x-2.5 ${
+				$page.url.pathname.includes("/layanan")
+					? "text-primary"
+					: "text-neutral-content hover:text-primary transition-colors duration-250"
+			}`}
 			on:click={openLayananMenu}
 			bind:this={btnLayananMenu}
 		>
 			Layanan
-			<ChevronUp {isLayananMenuOpened} />
+			<ChevronUp
+				{isLayananMenuOpened}
+				isCurrentPage={$page.url.pathname.includes("/layanan")}
+			/>
 		</button>
 
 		{#if isLayananMenuOpened}
 			<ul
-				class="bg-green-600 shadow-xl absolute flex flex-col justify-between rounded-lg py-3 px-5 top-20 w-48 -left-10"
+				class="bg-neutral shadow-xl absolute flex flex-col justify-between rounded-lg py-3 px-5 top-20 w-48 -left-10"
 				transition:scale={{
 					easing: linear,
 					duration: 250,
@@ -61,7 +85,11 @@
 				<li>
 					<a
 						href="/"
-						class="text-neutral-50 font-medium py-2.5 block"
+						class={`font-medium py-2.5 block ${
+							$page.url.pathname.includes("/layanan")
+								? "text-primary"
+								: "text-neutral-content hover:text-primary transition-colors duration-250"
+						}`}
 						on:click={closeLayananMenu}
 					>
 						Home
@@ -71,7 +99,11 @@
 				<li>
 					<a
 						href="/tentang-kami"
-						class="text-neutral-50 font-medium py-2.5 block"
+						class={`font-medium py-2.5 block ${
+							$page.url.pathname.includes("/layanan")
+								? "text-primary"
+								: "text-neutral-content hover:text-primary transition-colors duration-250"
+						}`}
 						on:click={closeLayananMenu}
 					>
 						Tentang Kami
@@ -81,7 +113,11 @@
 				<li>
 					<a
 						href="/blog"
-						class="text-neutral-50 font-medium py-2.5 block"
+						class={`font-medium py-2.5 block ${
+							$page.url.pathname.includes("/layanan")
+								? "text-primary"
+								: "text-neutral-content hover:text-primary transition-colors duration-250"
+						}`}
 						on:click={closeLayananMenu}
 					>
 						Blog
@@ -92,6 +128,15 @@
 	</li>
 
 	<li>
-		<a href="/blog" class="text-neutral-50 font-bold py-2.5 block">Blog</a>
+		<a
+			href="/blog"
+			class={`font-bold py-2.5 block min-w-11 ${
+				$page.url.pathname === "/blog" || $page.url.pathname.includes("/blog")
+					? "text-primary"
+					: "text-neutral-content hover:text-primary transition-colors duration-250"
+			}`}
+		>
+			Blog
+		</a>
 	</li>
 </ul>

@@ -32,7 +32,7 @@
 
 <svelte:window bind:innerWidth />
 
-<nav class="base-padding bg-green-600 fixed top-0 left-0 right-0">
+<nav class="base-padding bg-neutral fixed top-0 left-0 right-0">
 	<div
 		class="max-width flex flex-wrap justify-between items-center py-2 lg:py-3"
 	>
