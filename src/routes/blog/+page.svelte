@@ -53,25 +53,26 @@
 	/>
 </svelte:head>
 
-<main
-	class="base-margin max-width mt-[calc(60px+64px)] mb-16 lg:mt-[calc(72px+80px)]"
+<header
+	class="bg-image bg-no-repeat bg-cover bg-center absolute w-screen h-64 top-[60px] lg:h-96 lg:top-[72px]"
 >
-	<article class="w-80 mx-auto mb-8 lg:w-[512px]">
-		<h1
-			aria-label="Artikel Trois Pet Care"
-			class="font-bold text-center text-2xl mb-4"
-		>
-			Artikel
-		</h1>
+	<p
+		class="text-neutral-content font-medium text-center text-lg absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-80 lg:w-auto lg:text-2xl lg:left-1/2 lg:-translate-x-1/2"
+	>
+		Yuk tingkatkan pengetahuan kamu seputar
+		<strong class="text-primary">kesehatan hewan</strong>
+		melalui artikel kami.
+	</p>
+</header>
 
-		<p>
-			Kamu punya anabul? Kalau iya, yuk tingkatkan pengetahuan kamu seputar <strong
-			>
-				kesehatan hewan peliharaan
-			</strong>
-			melalui artikel kami.
-		</p>
-	</article>
+<main
+	class="base-margin max-width mt-[calc(60px+256px+64px)] mb-16 lg:mt-[calc(72px+384px+80px)]"
+>
+	<h1
+		class="text-neutral font-bold text-center text-2xl mb-6 lg:text-[32px] lg:mb-8"
+	>
+		Artikel Terkini
+	</h1>
 
 	<div
 		class="flex flex-wrap justify-center items-center gap-6"
@@ -88,7 +89,7 @@
 		{:else}
 			<button
 				type="button"
-				class="text-green-600 font-bold border-2 border-green-600 py-3 px-4 rounded-md block w-fit mx-auto mt-8 hover:bg-green-600/15 active:bg-green-600/15 transition-all duration-250"
+				class="btn btn-outline btn-primary block mx-auto mt-8"
 				on:click={loadMoreArticles}
 			>
 				Lihat lebih banyak
@@ -96,3 +97,14 @@
 		{/if}
 	{/if}
 </main>
+
+<style>
+	.bg-image {
+		background-image: linear-gradient(
+				to right,
+				rgba(51, 60, 77, 0.75),
+				rgba(51, 60, 77, 0.75)
+			),
+			url("/blog-hero.jpg");
+	}
+</style>

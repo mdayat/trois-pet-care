@@ -9,7 +9,7 @@
 		const anchor = articleEl.lastElementChild
 			?.lastElementChild as HTMLAnchorElement;
 
-		anchor.focus();
+		anchor.focus({ preventScroll: true });
 		articleEl.addEventListener(
 			"click",
 			function simulateClickOnAnchor() {

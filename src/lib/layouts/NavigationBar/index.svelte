@@ -32,11 +32,15 @@
 
 <svelte:window bind:innerWidth />
 
-<nav class="base-padding bg-neutral fixed top-0 left-0 right-0">
+<nav class="base-padding bg-neutral fixed top-0 left-0 right-0 z-10">
 	<div
 		class="max-width flex flex-wrap justify-between items-center py-2 lg:py-3"
 	>
-		<img src="/favicon.png" alt="Logo Trois Pet Care" class="w-10 lg:w-12" />
+		<img
+			src="/favicon.png"
+			alt="Logo Trois Pet Care"
+			class="w-11 h-11 lg:w-12 lg:h-12"
+		/>
 
 		{#if innerWidth < 1024}
 			<button
