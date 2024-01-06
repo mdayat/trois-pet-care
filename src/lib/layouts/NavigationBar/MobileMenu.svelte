@@ -47,7 +47,7 @@
 			}`}
 			on:click={closeMenu}
 		>
-			Home
+			Beranda
 		</a>
 	</li>
 

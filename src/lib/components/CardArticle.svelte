@@ -3,6 +3,7 @@
 	import { articleCoverImageAltFallback, joinStringToHyphen } from "$lib/utils";
 
 	export let article: Article;
+	let heading2: HTMLHeadingElement;
 
 	const focusToAnchor = (event: MouseEvent) => {
 		const articleEl = event.currentTarget as HTMLElement;
@@ -25,10 +26,18 @@
 		anchor.blur();
 	};
 
-	const triggerClickOnTouch = (event: TouchEvent) => {
+	const triggerClickOnAnchor = (event: TouchEvent) => {
 		const anchor = (event.currentTarget as HTMLElement).lastElementChild
 			?.lastElementChild as HTMLAnchorElement;
 		anchor.click();
+	};
+
+	const emphasizeHeading = () => {
+		heading2.classList.add("link");
+	};
+
+	const underemphasizeHeading = () => {
+		heading2.classList.remove("link");
 	};
 </script>
 
@@ -36,7 +45,7 @@
 	class="group bg-base-200 shadow-lg rounded-xl cursor-pointer max-w-80 h-fit p-4"
 	on:mouseenter={focusToAnchor}
 	on:mouseleave={blurFromAnchor}
-	on:touchstart={triggerClickOnTouch}
+	on:touchstart={triggerClickOnAnchor}
 >
 	{#if article.coverImageURL}
 		<img
@@ -52,7 +61,10 @@
 	{/if}
 
 	<div>
-		<h2 class="group-hover:link text-base-content font-semibold text-lg mb-2">
+		<h2
+			class="group-hover:link text-base-content font-semibold text-lg mb-2"
+			bind:this={heading2}
+		>
 			{article.title ?? `Artikel dengan ID ${article.id}`}
 		</h2>
 
@@ -74,6 +86,8 @@
 				aria-label={`Baca artikel dengan judul ${article.title}`}
 				href={`/blog/${joinStringToHyphen(article.title, " ")}-${article.id}`}
 				class="opacity-0"
+				on:focus={emphasizeHeading}
+				on:blur={underemphasizeHeading}
 			>
 			</a>
 		{:else}
@@ -81,6 +95,8 @@
 				aria-label={`Baca artikel dengan ID ${article.id}`}
 				href={`/blog/${article.id}`}
 				class="opacity-0"
+				on:focus={emphasizeHeading}
+				on:blur={underemphasizeHeading}
 			>
 			</a>
 		{/if}

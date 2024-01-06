@@ -30,7 +30,7 @@
 				$page.url.pathname === "/" ? "text-primary" : "menu-item-on-hover"
 			}`}
 		>
-			Home
+			Beranda
 		</a>
 	</li>
 
