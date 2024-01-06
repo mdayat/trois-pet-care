@@ -57,19 +57,28 @@
 
 			<ul class="flex flex-col justify-between ml-4 lg:ml-0">
 				<li>
-					<a href="/layanan/" class="text-neutral-content/90 block py-1">
+					<a
+						href="/layanan/layanan-1"
+						class="text-neutral-content/90 block py-1"
+					>
 						Layanan 1
 					</a>
 				</li>
 
 				<li>
-					<a href="/layanan/" class="text-neutral-content/90 block py-1">
+					<a
+						href="/layanan/layanan-2"
+						class="text-neutral-content/90 block py-1"
+					>
 						Layanan 2
 					</a>
 				</li>
 
 				<li>
-					<a href="/layanan/" class="text-neutral-content/90 block py-1">
+					<a
+						href="/layanan/layanan-3"
+						class="text-neutral-content/90 block py-1"
+					>
 						Layanan 3
 					</a>
 				</li>
