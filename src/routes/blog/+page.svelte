@@ -54,7 +54,7 @@
 </svelte:head>
 
 <header
-	class="bg-image bg-no-repeat bg-cover bg-center absolute w-screen h-64 top-[60px] lg:h-96 lg:top-[72px]"
+	class="bg-image bg-no-repeat bg-cover bg-center relative w-screen h-64 top-[66px] lg:h-96 lg:top-[86px]"
 >
 	<p
 		class="text-neutral-content font-medium text-center text-lg absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-80 lg:w-auto lg:text-2xl lg:left-1/2 lg:-translate-x-1/2"
@@ -66,7 +66,7 @@
 </header>
 
 <main
-	class="base-margin max-width mt-[calc(60px+256px+64px)] mb-16 lg:mt-[calc(72px+384px+80px)] lg:mb-20"
+	class="base-margin max-width mt-[calc(66px+64px)] mb-16 lg:mt-[calc(86px+80px)] lg:mb-20"
 >
 	<h1
 		class="text-neutral font-bold text-center text-2xl mb-6 lg:text-[32px] lg:mb-8"

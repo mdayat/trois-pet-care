@@ -43,7 +43,7 @@
 		<a
 			href="/"
 			class={`text-lg font-bold py-2 block ${
-				$page.url.pathname === "/" ? "text-primary" : "menu-item-on-hover"
+				$page.url.pathname === "/" ? "text-primary" : "menu-item"
 			}`}
 			on:click={closeMenu}
 		>
@@ -55,9 +55,7 @@
 		<a
 			href="/tentang-kami"
 			class={`text-lg font-bold py-2 block ${
-				$page.url.pathname === "/tentang-kami"
-					? "text-primary"
-					: "menu-item-on-hover"
+				$page.url.pathname === "/tentang-kami" ? "text-primary" : "menu-item"
 			}`}
 			on:click={closeMenu}
 		>
@@ -69,9 +67,7 @@
 		<button
 			type="button"
 			class={`text-lg font-bold py-2 group flex justify-between items-center gap-x-2.5 ${
-				$page.url.pathname.includes("/layanan")
-					? "text-primary"
-					: "menu-item-on-hover"
+				$page.url.pathname.includes("/layanan") ? "text-primary" : "menu-item"
 			}`}
 			on:click={toggleLayananMenu}
 			bind:this={btnLayananMenu}
@@ -93,7 +89,7 @@
 				<li>
 					<a
 						href="/"
-						class="menu-item-on-hover font-medium block py-2.5"
+						class="menu-item font-medium block py-2.5"
 						on:click={closeMenu}
 					>
 						Home
@@ -103,7 +99,7 @@
 				<li>
 					<a
 						href="/tentang-kami"
-						class="menu-item-on-hover font-medium block py-2.5"
+						class="menu-item font-medium block py-2.5"
 						on:click={closeMenu}
 					>
 						Tentang Kami
@@ -113,7 +109,7 @@
 				<li>
 					<a
 						href="/blog"
-						class="menu-item-on-hover font-medium block py-2.5"
+						class="menu-item font-medium block py-2.5"
 						on:click={closeMenu}
 					>
 						Blog
@@ -129,7 +125,7 @@
 			class={`text-lg font-bold py-2 block ${
 				$page.url.pathname === "/blog" || $page.url.pathname.includes("/blog")
 					? "text-primary"
-					: "menu-item-on-hover"
+					: "menu-item"
 			}`}
 			on:click={closeMenu}
 		>

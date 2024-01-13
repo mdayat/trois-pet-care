@@ -4,6 +4,7 @@
 
 	export let article: Article;
 	let heading2: HTMLHeadingElement;
+	let touchStartY: number;
 
 	const focusToAnchor = (event: MouseEvent) => {
 		const articleEl = event.currentTarget as HTMLElement;
@@ -26,10 +27,20 @@
 		anchor.blur();
 	};
 
-	const triggerClickOnAnchor = (event: TouchEvent) => {
-		const anchor = (event.currentTarget as HTMLElement).lastElementChild
-			?.lastElementChild as HTMLAnchorElement;
-		anchor.click();
+	const getTouchStartPosition = (event: TouchEvent) => {
+		touchStartY = event.changedTouches[0].clientY;
+	};
+
+	const checkTouchThreshold = (event: TouchEvent) => {
+		const touchEndY = event.changedTouches[0].clientY;
+		const distanceY = Math.abs(touchEndY - touchStartY);
+		const touchThreshold = 10;
+
+		if (distanceY < touchThreshold) {
+			const anchor = (event.currentTarget as HTMLElement).lastElementChild
+				?.lastElementChild as HTMLAnchorElement;
+			anchor.click();
+		}
 	};
 
 	const emphasizeHeading = () => {
@@ -45,7 +56,8 @@
 	class="group bg-base-200 shadow-lg rounded-xl cursor-pointer max-w-80 h-fit p-4"
 	on:mouseenter={focusToAnchor}
 	on:mouseleave={blurFromAnchor}
-	on:touchstart={triggerClickOnAnchor}
+	on:touchstart={getTouchStartPosition}
+	on:touchend={checkTouchThreshold}
 >
 	{#if article.coverImageURL}
 		<img

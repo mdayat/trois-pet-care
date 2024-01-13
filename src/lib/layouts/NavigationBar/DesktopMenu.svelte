@@ -27,7 +27,7 @@
 		<a
 			href="/"
 			class={`font-bold py-2.5 block ${
-				$page.url.pathname === "/" ? "text-primary" : "menu-item-on-hover"
+				$page.url.pathname === "/" ? "text-primary" : "menu-item"
 			}`}
 		>
 			Beranda
@@ -38,9 +38,7 @@
 		<a
 			href="/tentang-kami"
 			class={`font-bold py-2.5 block ${
-				$page.url.pathname === "/tentang-kami"
-					? "text-primary"
-					: "menu-item-on-hover"
+				$page.url.pathname === "/tentang-kami" ? "text-primary" : "menu-item"
 			}`}
 		>
 			Tentang Kami
@@ -51,9 +49,7 @@
 		<button
 			type="button"
 			class={`font-bold py-2.5 group flex justify-between items-center gap-x-2.5 ${
-				$page.url.pathname.includes("/layanan")
-					? "text-primary"
-					: "menu-item-on-hover"
+				$page.url.pathname.includes("/layanan") ? "text-primary" : "menu-item"
 			}`}
 			on:click={openLayananMenu}
 			bind:this={btnLayananMenu}
@@ -67,7 +63,7 @@
 
 		{#if isLayananMenuOpened}
 			<ul
-				class="bg-neutral shadow-xl absolute flex flex-col justify-between rounded-lg py-3 px-5 top-20 w-48 -left-10"
+				class="bg-base-100 border border-base-200 shadow-lg absolute flex flex-col justify-between rounded-lg py-3 px-5 top-20 w-48 -left-10"
 				transition:scale={{
 					easing: linear,
 					duration: 250,
@@ -86,7 +82,7 @@
 						class={`font-medium py-2.5 block ${
 							$page.url.pathname.includes("/layanan")
 								? "text-primary"
-								: "menu-item-on-hover"
+								: "menu-item"
 						}`}
 						on:click={closeLayananMenu}
 					>
@@ -100,7 +96,7 @@
 						class={`font-medium py-2.5 block ${
 							$page.url.pathname.includes("/layanan")
 								? "text-primary"
-								: "menu-item-on-hover"
+								: "menu-item"
 						}`}
 						on:click={closeLayananMenu}
 					>
@@ -114,7 +110,7 @@
 						class={`font-medium py-2.5 block ${
 							$page.url.pathname.includes("/layanan")
 								? "text-primary"
-								: "menu-item-on-hover"
+								: "menu-item"
 						}`}
 						on:click={closeLayananMenu}
 					>
@@ -131,7 +127,7 @@
 			class={`font-bold py-2.5 block min-w-11 ${
 				$page.url.pathname === "/blog" || $page.url.pathname.includes("/blog")
 					? "text-primary"
-					: "menu-item-on-hover"
+					: "menu-item"
 			}`}
 		>
 			Blog

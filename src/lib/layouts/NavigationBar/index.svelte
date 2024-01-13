@@ -32,14 +32,16 @@
 
 <svelte:window bind:innerWidth />
 
-<nav class="base-padding bg-neutral fixed top-0 left-0 right-0 z-10">
+<nav
+	class="base-padding bg-base-100 border-b-2 border-base-200 fixed top-0 left-0 right-0 z-10 min-h-[66px] max-h-max grid place-items-center lg:min-h-[86px]"
+>
 	<div
-		class="max-width flex flex-wrap justify-between items-center py-2 lg:py-3"
+		class="max-width w-full flex flex-wrap justify-between items-center py-2 lg:py-3"
 	>
 		<img
-			src="/favicon.png"
+			src="/logo.png"
 			alt="Logo Trois Pet Care"
-			class="w-11 h-11 lg:w-12 lg:h-12"
+			class="object-cover object-center w-16 lg:w-20"
 		/>
 
 		{#if innerWidth < 1024}

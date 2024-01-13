@@ -9,7 +9,7 @@
 	class={`transition-all duration-250 w-4 h-4 ${
 		isCurrentPage
 			? "fill-primary"
-			: "fill-neutral-content group-hover:fill-primary"
+			: "fill-base-content group-hover:fill-primary"
 	} ${isLayananMenuOpened ? "" : "rotate-180"}`}
 >
 	<path
