@@ -59,18 +59,11 @@
 	on:touchstart={getTouchStartPosition}
 	on:touchend={checkTouchThreshold}
 >
-	{#if article.coverImageURL}
-		<img
-			src={article.coverImageURL}
-			alt={article.title ?? articleCoverImageAltFallback(article.id)}
-			class="bg-base-300 w-full h-44 object-cover object-center rounded-lg mb-4"
-		/>
-	{:else}
-		<img
-			alt={article.title ?? articleCoverImageAltFallback(article.id)}
-			class="bg-base-300 w-full h-44 object-cover object-center rounded-lg mb-4"
-		/>
-	{/if}
+	<img
+		src={article.coverImageURL ?? ""}
+		alt={article.title ?? articleCoverImageAltFallback(article.id)}
+		class="bg-base-300 w-full h-44 object-cover object-center rounded-lg mb-4"
+	/>
 
 	<div>
 		<h2

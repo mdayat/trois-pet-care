@@ -34,7 +34,7 @@
 		<p
 			class="text-neutral-content font-bold text-2xl lg:text-5xl lg:leading-[64px]"
 		>
-			Solusi terpadu untuk perawatan kesehatan dan persediaan hewan peliharaan
+			Solusi terpadu untuk layanan kesehatan dan perlengkapan hewan peliharaan
 		</p>
 
 		<div
@@ -61,8 +61,39 @@
 </header>
 
 <main
-	class="base-margin max-width mt-[calc(60px+64px)] mb-16 lg:mt-[calc(72px+80px)] lg:mb-20"
-></main>
+	class="base-margin max-width mt-[calc(66px-32px)] mb-16 lg:mt-[calc(86px-32px)] lg:mb-20"
+>
+	<article
+		id="tentang-kami"
+		class="grid place-items-center max-w-[512px] mx-auto pt-[calc(64px+32px)] lg:grid-cols-2 lg:max-w-none lg:pt-[calc(80px+32px)]"
+	>
+		<h1
+			class="text-base-content font-bold text-2xl mb-6 lg:col-span-2 lg:text-[32px] lg:mb-12"
+		>
+			Tentang Trois Pet Care
+		</h1>
+
+		<div class="order-2 lg:order-1 lg:max-w-[680px]">
+			<p class="text-base-content mb-4 lg:text-lg">
+				Trois Pet Care merupakan tempat pelayanan kesehatan dan kebutuhan hewan
+				peliharaan. Pelayanan kesehatan hewan ditunjang dengan dokter hewan yang
+				berpengalaman dan fasilitas pendukungnya.
+			</p>
+
+			<p class="text-base-content lg:text-lg">
+				Selain itu, Trois Pet Care juga menyediakan berbagai kebutuhan mulai
+				dari pakan, aksesori, kandang, dan perlengkapan hewan peliharaan
+				lainnya.
+			</p>
+		</div>
+
+		<img
+			src="/blog-hero.jpg"
+			alt="Trois Pet Care"
+			class="order-1 bg-base-300 object-cover object-center rounded-lg w-full aspect-video mb-6 max-w-[512px] lg:mb-0"
+		/>
+	</article>
+</main>
 
 <style>
 	.bg-image {

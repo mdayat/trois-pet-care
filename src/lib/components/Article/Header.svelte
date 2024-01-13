@@ -84,18 +84,11 @@
 		</button>
 	</div>
 
-	{#if articleCoverImageURL}
-		<img
-			src={articleCoverImageURL}
-			alt={articleTitle ?? articleCoverImageAltFallback(articleID)}
-			class="bg-base-300 object-cover object-center rounded-lg w-full aspect-video mb-6 lg:min-h-80 lg:max-h-96"
-		/>
-	{:else}
-		<img
-			alt={articleTitle ?? articleCoverImageAltFallback(articleID)}
-			class="bg-base-300 object-cover object-center rounded-lg w-full aspect-video mb-6 lg:min-h-80 lg:max-h-96"
-		/>
-	{/if}
+	<img
+		src={articleCoverImageURL ?? ""}
+		alt={articleTitle ?? articleCoverImageAltFallback(articleID)}
+		class="bg-base-300 object-cover object-center rounded-lg w-full aspect-video mb-6"
+	/>
 
 	<p class="text-sm border-l-4 border-neutral pl-2 lg:text-base">
 		Penulis:

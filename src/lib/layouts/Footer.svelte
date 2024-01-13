@@ -4,7 +4,7 @@
 	>
 		<div class="max-w-80 mx-auto mb-8 lg:mx-0 lg:mb-0">
 			<img
-				src="/favicon.png"
+				src="/logo.png"
 				alt="Logo Trois Pet Care"
 				class="w-16 mx-auto mb-4"
 			/>
