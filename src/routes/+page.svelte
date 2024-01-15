@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
+	import Services from "$lib/components/Home/Services.svelte";
 	import type { LayoutServerData } from "./$types";
 
 	let absoluteImageURL: string;
-
 	onMount(() => {
 		absoluteImageURL = new URL("/blog-hero.jpg", document.baseURI).href;
 	});
@@ -26,7 +26,7 @@
 </svelte:head>
 
 <header
-	class="bg-image bg-no-repeat bg-cover bg-center grid place-items-center relative w-screen h-[calc(100vh-66px)] top-[66px] lg:h-[calc(100vh-86px)] lg:top-[86px]"
+	class="bg-image bg-no-repeat bg-cover bg-center grid place-items-center relative top-[66px] w-screen h-[calc(100vh-66px)] lg:h-[calc(100vh-86px)] lg:top-[86px]"
 >
 	<div
 		class="absolute top-1/2 -translate-y-1/2 max-w-[680px] px-8 lg:px-0 lg:max-w-[900px]"
@@ -60,12 +60,10 @@
 	</div>
 </header>
 
-<main
-	class="base-margin max-width mt-[calc(66px-32px)] mb-16 lg:mt-[calc(86px-32px)] lg:mb-20"
->
+<main class="mt-[66px] mb-20 lg:mb-28 lg:mt-[86px]">
 	<article
 		id="tentang-kami"
-		class="grid place-items-center max-w-[512px] mx-auto pt-[calc(64px+32px)] lg:grid-cols-2 lg:max-w-none lg:pt-[calc(80px+32px)]"
+		class="base-padding max-width grid place-items-center max-w-[512px] mx-auto pt-20 lg:grid-cols-2 lg:max-w-max lg:pt-28"
 	>
 		<h1
 			class="text-base-content font-bold text-2xl mb-6 lg:col-span-2 lg:text-[32px] lg:mb-12"
@@ -90,9 +88,11 @@
 		<img
 			src="/blog-hero.jpg"
 			alt="Trois Pet Care"
-			class="order-1 bg-base-300 object-cover object-center rounded-lg w-full aspect-video mb-6 max-w-[512px] lg:mb-0"
+			class="order-1 bg-base-300 object-cover object-center rounded-lg w-full aspect-video mb-6 max-w-[512px] lg:mb-0 lg:ml-auto"
 		/>
 	</article>
+
+	<Services />
 </main>
 
 <style>

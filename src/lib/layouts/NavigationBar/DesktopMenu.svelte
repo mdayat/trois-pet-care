@@ -78,43 +78,43 @@
 			>
 				<li>
 					<a
-						href="/"
+						href="/layanan/praktik"
 						class={`font-medium py-2.5 block ${
-							$page.url.pathname.includes("/layanan")
+							$page.url.pathname === "/layanan/praktik"
 								? "text-primary"
 								: "menu-item"
 						}`}
 						on:click={closeLayananMenu}
 					>
-						Home
+						Praktik
 					</a>
 				</li>
 
 				<li>
 					<a
-						href="/tentang-kami"
+						href="/layanan/grooming"
 						class={`font-medium py-2.5 block ${
-							$page.url.pathname.includes("/layanan")
+							$page.url.pathname === "/layanan/grooming"
 								? "text-primary"
 								: "menu-item"
 						}`}
 						on:click={closeLayananMenu}
 					>
-						Tentang Kami
+						Grooming
 					</a>
 				</li>
 
 				<li>
 					<a
-						href="/blog"
+						href="/layanan/perlengkapan-hewan"
 						class={`font-medium py-2.5 block ${
-							$page.url.pathname.includes("/layanan")
+							$page.url.pathname === "/layanan/perlengkapan-hewan"
 								? "text-primary"
 								: "menu-item"
 						}`}
 						on:click={closeLayananMenu}
 					>
-						Blog
+						Perlengkapan
 					</a>
 				</li>
 			</ul>

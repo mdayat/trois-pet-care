@@ -1,7 +1,14 @@
+<script lang="ts">
+	import { onMount } from "svelte";
+
+	let currentYear = 2024;
+	onMount(() => {
+		currentYear = new Date().getFullYear();
+	});
+</script>
+
 <footer class="bg-neutral base-padding py-6 lg:py-8">
-	<article
-		class="max-width lg:flex lg:flex-wrap lg:justify-between lg:items-center"
-	>
+	<article class="max-width lg:flex lg:flex-wrap lg:justify-between">
 		<div class="max-w-80 mx-auto mb-8 lg:mx-0 lg:mb-0">
 			<img
 				src="/logo.png"
@@ -10,8 +17,8 @@
 			/>
 
 			<p class="text-neutral-content font-medium text-center">
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, earum
-				reprehenderit.
+				Solusi terpadu untuk layanan kesehatan dan perlengkapan hewan
+				peliharaan.
 			</p>
 		</div>
 
@@ -19,7 +26,7 @@
 			class="border-b-2 border-b-neutral-content pb-4 mb-4 lg:border-none lg:pb-0 lg:mb-0"
 		>
 			<h3 class="text-neutral-content font-semibold text-lg mb-2 lg:mb-2.5">
-				Company
+				Klinik Kami
 			</h3>
 
 			<ul class="flex flex-col justify-between ml-4 lg:ml-0">
@@ -30,9 +37,13 @@
 				</li>
 
 				<li>
-					<a href="/" class="text-neutral-content/90 block py-1">
-						Hubungi Kami
+					<a href="/#hubungi-kami" class="text-neutral-content/90 block py-1">
+						Kontak
 					</a>
+				</li>
+
+				<li>
+					<a href="/blog" class="text-neutral-content/90 block py-1">Blog</a>
 				</li>
 
 				<li>
@@ -57,29 +68,26 @@
 
 			<ul class="flex flex-col justify-between ml-4 lg:ml-0">
 				<li>
-					<a
-						href="/layanan/layanan-1"
-						class="text-neutral-content/90 block py-1"
-					>
-						Layanan 1
+					<a href="/layanan/praktik" class="text-neutral-content/90 block py-1">
+						Praktik Dokter Hewan
 					</a>
 				</li>
 
 				<li>
 					<a
-						href="/layanan/layanan-2"
+						href="/layanan/grooming"
 						class="text-neutral-content/90 block py-1"
 					>
-						Layanan 2
+						Grooming
 					</a>
 				</li>
 
 				<li>
 					<a
-						href="/layanan/layanan-3"
+						href="/layanan/perlengkapan-hewan"
 						class="text-neutral-content/90 block py-1"
 					>
-						Layanan 3
+						Perlengkapan Hewan
 					</a>
 				</li>
 			</ul>
@@ -89,7 +97,7 @@
 			class="border-b-2 border-b-neutral-content pb-4 mb-8 lg:border-none lg:pb-0 lg:mb-0"
 		>
 			<h3 class="text-neutral-content font-semibold text-lg mb-2 lg:mb-2.5">
-				Connect With Us
+				Ikuti Kami
 			</h3>
 
 			<ul class="flex flex-col justify-between ml-4 lg:ml-0">
@@ -131,7 +139,7 @@
 		<p
 			class="text-neutral-content font-medium text-center lg:basis-full lg:mt-8 lg:pt-8 lg:border-t-2 lg:border-neutral-content"
 		>
-			&copy; {new Date().getFullYear()} Trois Pet Care. All Rights Reserved
+			&copy; {currentYear} Trois Pet Care. All Rights Reserved
 		</p>
 	</article>
 </footer>

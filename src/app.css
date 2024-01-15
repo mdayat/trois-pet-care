@@ -12,7 +12,7 @@
 	}
 
 	.max-width {
-		@apply max-w-[calc(1536px-112px)] 2xl:mx-auto;
+		@apply 2xl:max-w-[calc(1536px-112px)] 2xl:mx-auto;
 	}
 
 	.menu-item {

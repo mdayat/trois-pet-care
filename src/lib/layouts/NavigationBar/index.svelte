@@ -46,6 +46,7 @@
 
 		{#if innerWidth < 1024}
 			<button
+				aria-label="Menu Opener"
 				type="button"
 				class="p-2"
 				bind:this={btnMenu}
