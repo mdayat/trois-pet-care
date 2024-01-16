@@ -41,10 +41,7 @@
 			class="flex flex-col justify-start gap-y-4 mt-8 lg:flex-row lg:gap-y-0 lg:gap-x-4"
 		>
 			<a href="#tentang-kami" class="btn btn-primary">Kenalan Yuk!</a>
-			<a
-				href="#layanan"
-				class="btn btn-active btn-ghost glass text-neutral-content"
-			>
+			<a href="#layanan" class="btn btn-ghost glass text-neutral-content">
 				Jelajahi Layanan Kami
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
