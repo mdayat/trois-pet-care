@@ -5,6 +5,7 @@
 	import { trapFocus } from "$lib/actions/trapFocus";
 	import { clickOutside } from "$lib/actions/clickOutside";
 	import ChevronUp from "../../components/icons/ChevronUp.svelte";
+	import WhatsApp from "$lib/components/icons/WhatsApp.svelte";
 
 	export let isMenuOpened: boolean;
 	export let isLayananMenuOpened: boolean;
@@ -142,6 +143,17 @@
 			on:click={closeMenu}
 		>
 			Blog
+		</a>
+	</li>
+
+	<li>
+		<a
+			href="https://wa.me/6281333255532"
+			target="_blank"
+			rel="noopener"
+			class="btn btn-secondary btn-block mt-8"
+		>
+			Buat Janji <WhatsApp color="fill-secondary-content" />
 		</a>
 	</li>
 </ul>

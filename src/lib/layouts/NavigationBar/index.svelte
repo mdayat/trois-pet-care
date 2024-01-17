@@ -1,4 +1,5 @@
 <script lang="ts">
+	import WhatsApp from "$lib/components/icons/WhatsApp.svelte";
 	import Bars from "../../components/icons/Bars.svelte";
 	import DesktopMenu from "./DesktopMenu.svelte";
 	import MobileMenu from "./MobileMenu.svelte";
@@ -62,6 +63,15 @@
 
 		{#if innerWidth >= 1024}
 			<DesktopMenu />
+
+			<a
+				href="https://wa.me/6281333255532"
+				target="_blank"
+				rel="noopener"
+				class="btn btn-secondary"
+			>
+				Buat Janji <WhatsApp color="fill-secondary-content" />
+			</a>
 		{/if}
 	</div>
 </nav>

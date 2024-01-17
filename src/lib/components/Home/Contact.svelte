@@ -54,7 +54,7 @@
 					rel="noopener"
 					class="text-base-content link link-hover flex justify-start items-center gap-x-4 py-2.5"
 				>
-					<WhatsApp />
+					<WhatsApp color="fill-primary" />
 					0813-3325-5532
 				</a>
 			</li>
