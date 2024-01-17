@@ -5,9 +5,9 @@
 	import PetSupplies from "../icons/PetSupplies.svelte";
 </script>
 
-<section id="layanan" class="pt-20 mb-20 lg:pt-28 lg:mb-28">
+<section id="layanan" class="pt-20 lg:pt-28">
 	<div
-		class="max-width base-padding bg-neutral flex flex-wrap justify-center items-center gap-6 py-12 lg:gap-8"
+		class="base-padding bg-neutral flex flex-wrap justify-center items-center gap-6 py-12 lg:gap-8"
 	>
 		<h2
 			class="basis-full text-neutral-content font-bold text-center text-2xl mb-4 lg:text-[32px] lg:mb-6"

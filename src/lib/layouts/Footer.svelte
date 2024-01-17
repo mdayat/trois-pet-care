@@ -45,17 +45,6 @@
 				<li>
 					<a href="/blog" class="text-neutral-content/90 block py-1">Blog</a>
 				</li>
-
-				<li>
-					<a
-						href="https://maps.app.goo.gl/u4akSXyrcFLRYgEd7"
-						target="_blank"
-						rel="noopener"
-						class="text-neutral-content/90 block py-1"
-					>
-						Alamat
-					</a>
-				</li>
 			</ul>
 		</section>
 
@@ -97,40 +86,40 @@
 			class="border-b-2 border-b-neutral-content pb-4 mb-8 lg:border-none lg:pb-0 lg:mb-0"
 		>
 			<h3 class="text-neutral-content font-semibold text-lg mb-2 lg:mb-2.5">
-				Ikuti Kami
+				Toko Kami
 			</h3>
 
 			<ul class="flex flex-col justify-between ml-4 lg:ml-0">
 				<li>
 					<a
-						href="https://www.instagram.com/troispetcare"
+						href="https://maps.app.goo.gl/u4akSXyrcFLRYgEd7"
 						target="_blank"
 						rel="noopener"
 						class="text-neutral-content/90 block py-1"
 					>
-						Instagram
+						Alamat
 					</a>
 				</li>
 
 				<li>
 					<a
-						href="https://www.tiktok.com/@troispetcareofficial"
+						href="https://www.tokopedia.com/trois-3?utm_campaign=Shop-126756939-10789193-170124&utm_source=salinlink&utm_medium=share"
 						target="_blank"
 						rel="noopener"
 						class="text-neutral-content/90 block py-1"
 					>
-						Tiktok
+						Tokopedia
 					</a>
 				</li>
 
 				<li>
 					<a
-						href="https://facebook.com/troispetcare"
+						href="https://shopee.co.id/troispetshop"
 						target="_blank"
 						rel="noopener"
 						class="text-neutral-content/90 block py-1"
 					>
-						Facebook
+						Shopee
 					</a>
 				</li>
 			</ul>

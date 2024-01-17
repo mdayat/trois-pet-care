@@ -2,6 +2,9 @@
 	import { onMount } from "svelte";
 	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
 	import Services from "$lib/components/Home/Services.svelte";
+	import Contact from "$lib/components/Home/Contact.svelte";
+	import OperatingHours from "$lib/components/Home/OperatingHours.svelte";
+	import CircleChevronDown from "$lib/components/icons/CircleChevronDown.svelte";
 	import type { LayoutServerData } from "./$types";
 
 	let absoluteImageURL: string;
@@ -43,15 +46,7 @@
 			<a href="#tentang-kami" class="btn btn-primary">Kenalan Yuk!</a>
 			<a href="#layanan" class="btn btn-ghost glass text-neutral-content">
 				Jelajahi Layanan Kami
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 512 512"
-					class="fill-neutral-content w-4 h-4"
-				>
-					<path
-						d="M256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM135 241c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l87 87 87-87c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L273 345c-9.4 9.4-24.6 9.4-33.9 0L135 241z"
-					/>
-				</svg>
+				<CircleChevronDown />
 			</a>
 		</div>
 	</div>
@@ -90,6 +85,14 @@
 	</article>
 
 	<Services />
+
+	<div
+		id="hubungi-kami"
+		class="base-padding max-width pt-20 lg:grid lg:grid-cols-2 lg:pt-28"
+	>
+		<Contact />
+		<OperatingHours />
+	</div>
 </main>
 
 <style>
