@@ -73,10 +73,10 @@
 
 				<li>
 					<a
-						href="/layanan/perlengkapan-hewan"
+						href="/layanan/kebutuhan-hewan"
 						class="text-neutral-content/90 block py-1"
 					>
-						Perlengkapan Hewan
+						Kebutuhan Hewan
 					</a>
 				</li>
 			</ul>

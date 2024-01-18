@@ -32,7 +32,7 @@
 
 			<a
 				href="/layanan/praktik"
-				class="link link-primary link-hover flex justify-start items-center gap-x-2 mt-auto"
+				class="link link-primary link-hover flex justify-start items-center gap-x-2 w-fit mt-auto"
 			>
 				Selengkapnya
 				<ArrowLink />
@@ -46,7 +46,7 @@
 			<h3
 				class="text-neutral font-medium text-lg flex justify-between items-center mt-4 mb-2"
 			>
-				Praktik Dokter Hewan
+				Grooming
 			</h3>
 
 			<p class="text-neutral/90">
@@ -55,8 +55,8 @@
 			</p>
 
 			<a
-				href="/layanan/praktik"
-				class="link link-primary link-hover flex justify-start items-center gap-x-2 mt-auto"
+				href="/layanan/grooming"
+				class="link link-primary link-hover flex justify-start items-center gap-x-2 w-fit mt-auto"
 			>
 				Selengkapnya
 				<ArrowLink />
@@ -70,17 +70,17 @@
 			<h3
 				class="text-neutral font-medium text-lg flex justify-between items-center mt-4 mb-2"
 			>
-				Praktik Dokter Hewan
+				Kebutuhan Hewan
 			</h3>
 
 			<p class="text-neutral/90">
-				Perlengkapan kebutuhan hewan, mulai makanan, vitamin, hingga aksesori
-				hewan.
+				Perlengkapan kebutuhan hewan, mulai dari makanan, vitamin, hingga
+				aksesori hewan.
 			</p>
 
 			<a
-				href="/layanan/praktik"
-				class="link link-primary link-hover flex justify-start items-center gap-x-2 mt-auto"
+				href="/layanan/kebutuhan-hewan"
+				class="link link-primary link-hover flex justify-start items-center gap-x-2 w-fit mt-auto"
 			>
 				Selengkapnya
 				<ArrowLink />

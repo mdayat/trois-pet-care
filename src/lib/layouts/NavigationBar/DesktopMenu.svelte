@@ -106,15 +106,15 @@
 
 				<li>
 					<a
-						href="/layanan/perlengkapan-hewan"
+						href="/layanan/kebutuhan-hewan"
 						class={`font-medium py-2.5 block ${
-							$page.url.pathname === "/layanan/perlengkapan-hewan"
+							$page.url.pathname === "/layanan/kebutuhan-hewan"
 								? "text-primary"
 								: "menu-item"
 						}`}
 						on:click={closeLayananMenu}
 					>
-						Perlengkapan
+						Kebutuhan
 					</a>
 				</li>
 			</ul>
