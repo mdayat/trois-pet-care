@@ -42,7 +42,7 @@
 		<img
 			src="/logo.png"
 			alt="Logo Trois Pet Care"
-			class="object-cover object-center w-16 lg:w-20"
+			class="object-cover object-center w-16 h-12 lg:w-20 lg:h-[60px]"
 		/>
 
 		{#if innerWidth < 1024}

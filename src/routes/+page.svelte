@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from "svelte";
 	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
 	import Services from "$lib/components/Home/Services.svelte";
 	import Contact from "$lib/components/Home/Contact.svelte";
@@ -7,24 +6,23 @@
 	import CircleChevronDown from "$lib/components/icons/CircleChevronDown.svelte";
 	import type { LayoutServerData } from "./$types";
 
-	let absoluteImageURL: string;
-	onMount(() => {
-		absoluteImageURL = new URL("/blog-hero.jpg", document.baseURI).href;
-	});
-
 	export let data: LayoutServerData;
 </script>
 
 <svelte:head>
 	<title>Trois Pet Care</title>
-	<meta name="description" content="" />
-	<meta name="author" content="Trois Pet Care" />
+	<meta
+		name="description"
+		content="Trois Pet Care adalah tempat pelayanan kesehatan dan kebutuhan hewan
+	peliharaan."
+	/>
 
 	<OpenGraphMetaTags
 		title="Trois Pet Care"
-		description=""
+		description="Trois Pet Care adalah tempat pelayanan kesehatan dan kebutuhan hewan
+		peliharaan."
 		pageURL={data.pageURL}
-		imageURL={absoluteImageURL}
+		imageURL={data.baseURL + "/logo.png"}
 	/>
 </svelte:head>
 
@@ -37,7 +35,7 @@
 		<p
 			class="text-neutral-content font-bold text-2xl lg:text-5xl lg:leading-[64px]"
 		>
-			Solusi terpadu untuk layanan kesehatan dan perlengkapan hewan peliharaan
+			Solusi terpadu untuk layanan kesehatan dan kebutuhan hewan peliharaan
 		</p>
 
 		<div
@@ -55,7 +53,7 @@
 <main class="mt-[66px] mb-20 lg:mb-28 lg:mt-[86px]">
 	<article
 		id="tentang-kami"
-		class="base-padding max-width grid place-items-center max-w-[512px] mx-auto pt-20 lg:grid-cols-2 lg:max-w-max lg:pt-28"
+		class="base-padding max-width grid place-items-center max-w-[512px] mx-auto pt-20 lg:grid-cols-2 lg:gap-x-4 lg:max-w-max lg:pt-28"
 	>
 		<h1
 			class="text-base-content font-bold text-2xl mb-6 lg:col-span-2 lg:text-[32px] lg:mb-12"
@@ -65,15 +63,14 @@
 
 		<div class="order-2 lg:order-1 lg:max-w-[680px]">
 			<p class="text-base-content mb-4 lg:text-lg">
-				Trois Pet Care merupakan tempat pelayanan kesehatan dan kebutuhan hewan
+				Trois Pet Care adalah tempat pelayanan kesehatan dan kebutuhan hewan
 				peliharaan. Pelayanan kesehatan hewan ditunjang dengan dokter hewan yang
 				berpengalaman dan fasilitas pendukungnya.
 			</p>
 
 			<p class="text-base-content lg:text-lg">
 				Selain itu, Trois Pet Care juga menyediakan berbagai kebutuhan mulai
-				dari pakan, aksesori, kandang, dan perlengkapan hewan peliharaan
-				lainnya.
+				dari pakan, aksesori, kandang, dan kebutuhan hewan peliharaan lainnya.
 			</p>
 		</div>
 
