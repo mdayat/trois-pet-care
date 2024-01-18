@@ -34,10 +34,10 @@
 <svelte:window bind:innerWidth />
 
 <nav
-	class="base-padding bg-base-100 border-b-2 border-base-200 fixed top-0 left-0 right-0 z-10 min-h-[66px] max-h-max grid place-items-center lg:min-h-[86px]"
+	class="bg-base-100 border-b-2 border-base-200 fixed top-0 left-0 right-0 z-10"
 >
 	<div
-		class="max-width w-full flex flex-wrap justify-between items-center py-2 lg:py-3"
+		class="base-margin flex flex-wrap justify-between items-center py-2 lg:py-3 2xl:max-width"
 	>
 		<img
 			src="/logo.png"

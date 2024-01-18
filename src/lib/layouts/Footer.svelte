@@ -7,8 +7,10 @@
 	});
 </script>
 
-<footer class="bg-neutral base-padding py-6 lg:py-8">
-	<article class="max-width lg:flex lg:flex-wrap lg:justify-between">
+<footer class="bg-neutral py-6 lg:py-8">
+	<article
+		class="base-margin lg:flex lg:flex-wrap lg:justify-between 2xl:max-width"
+	>
 		<div class="max-w-80 mx-auto mb-8 lg:mx-0 lg:mb-0">
 			<img
 				src="/logo.png"

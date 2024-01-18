@@ -8,11 +8,11 @@
 	}
 
 	.base-margin {
-		@apply mx-8 lg:mx-20 xl:mx-24 2xl:mx-28;
+		@apply mx-8 lg:mx-20 xl:mx-24;
 	}
 
 	.max-width {
-		@apply 2xl:max-w-[calc(1536px-112px)] 2xl:mx-auto;
+		@apply max-w-[calc(1536px-112px)] mx-auto;
 	}
 
 	.menu-item {

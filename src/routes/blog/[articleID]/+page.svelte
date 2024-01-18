@@ -31,19 +31,23 @@
 	articleCoverImageURL={data.coverImageURL}
 />
 
-<main class="base-margin mt-8 mb-16 lg:mb-20">
+<main class="mx-8 mt-8 mb-16 lg:mb-20">
 	<article id="article-content">
 		<SvelteMarkdown source={data.contents} />
 	</article>
 </main>
 
 <style lang="postcss">
+	#article-content {
+		@apply max-w-lg mx-auto lg:max-w-2xl;
+	}
+
 	#article-content :global(h2) {
-		@apply text-neutral font-bold text-justify text-2xl max-w-[512px] mx-auto mb-4 lg:max-w-[680px];
+		@apply text-neutral font-bold text-justify text-2xl mb-4;
 	}
 
 	#article-content :global(p) {
-		@apply text-neutral text-justify max-w-[512px] mx-auto mb-4 lg:max-w-[680px];
+		@apply text-neutral text-justify mb-4;
 	}
 
 	#article-content :global(img) {
@@ -51,9 +55,9 @@
 	}
 
 	#article-content :global(ol) {
-		@apply list-decimal flex flex-col gap-y-2 max-w-[512px] mx-auto pl-8 mb-4 lg:max-w-[680px];
+		@apply list-decimal flex flex-col gap-y-2 pl-8 mb-4;
 	}
 	#article-content :global(ul) {
-		@apply list-disc flex flex-col gap-y-2 max-w-[512px] mx-auto pl-8 mb-4 lg:max-w-[680px];
+		@apply list-disc flex flex-col gap-y-2 pl-8 mb-4;
 	}
 </style>

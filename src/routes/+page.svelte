@@ -53,7 +53,7 @@
 <main class="mt-[66px] mb-20 lg:mb-28 lg:mt-[86px]">
 	<article
 		id="tentang-kami"
-		class="base-padding max-width grid place-items-center max-w-[512px] mx-auto pt-20 lg:grid-cols-2 lg:gap-x-4 lg:max-w-max lg:pt-28"
+		class="grid place-items-center max-w-[calc(512px+64px)] mx-auto px-8 pt-20 lg:px-0 lg:grid-cols-2 lg:gap-x-4 lg:max-w-max lg:mx-20 lg:pt-28 xl:mx-24 2xl:max-width"
 	>
 		<h1
 			class="text-base-content font-bold text-2xl mb-6 lg:col-span-2 lg:text-[32px] lg:mb-12"
@@ -85,7 +85,7 @@
 
 	<div
 		id="hubungi-kami"
-		class="base-padding max-width pt-20 lg:grid lg:grid-cols-2 lg:pt-28"
+		class="base-margin pt-20 lg:grid lg:grid-cols-2 lg:pt-28 2xl:max-width"
 	>
 		<Contact />
 		<OperatingHours />

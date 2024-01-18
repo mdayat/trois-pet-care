@@ -66,7 +66,7 @@
 </header>
 
 <main
-	class="base-margin max-width mt-[calc(66px+64px)] mb-16 lg:mt-[calc(86px+80px)] lg:mb-20"
+	class="base-margin mt-[calc(66px+64px)] mb-16 lg:mt-[calc(86px+80px)] lg:mb-20 2xl:max-width"
 >
 	<h1
 		class="text-neutral font-bold text-center text-2xl mb-6 lg:text-[32px] lg:mb-8"
