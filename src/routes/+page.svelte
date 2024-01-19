@@ -3,6 +3,7 @@
 	import Services from "$lib/components/Home/Services.svelte";
 	import Contact from "$lib/components/Home/Contact.svelte";
 	import OperatingHours from "$lib/components/Home/OperatingHours.svelte";
+	import Doctor from "$lib/components/Home/Doctor.svelte";
 	import CircleChevronDown from "$lib/components/icons/CircleChevronDown.svelte";
 	import type { LayoutServerData } from "./$types";
 
@@ -82,6 +83,7 @@
 	</article>
 
 	<Services />
+	<Doctor />
 
 	<div
 		id="hubungi-kami"
