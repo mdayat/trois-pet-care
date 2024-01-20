@@ -37,13 +37,13 @@
 		<ul class="max-w-64 mx-auto">
 			<li>
 				<a
-					href="mailto:example@gmail.com"
+					href="mailto:troispetcare@gmail.com"
 					target="_blank"
 					rel="noopener"
 					class="text-base-content link link-hover flex justify-start items-center gap-x-4 py-2.5"
 				>
 					<Email />
-					example@gmail.com
+					troispetcare@gmail.com
 				</a>
 			</li>
 

@@ -8,7 +8,7 @@
 </script>
 
 <footer
-	class="bg-base-100 border-t-2 border-base-200 shadow-inner shadow-base-200 text-base-content py-6 lg:py-8"
+	class="bg-base-100 border-t-2 border-base-200 shadow-inner shadow-base-200 text-base-content py-8 lg:pt-12"
 >
 	<article
 		class="base-margin lg:flex lg:flex-wrap lg:justify-between 2xl:max-width"
