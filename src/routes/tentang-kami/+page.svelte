@@ -73,7 +73,7 @@
 		</h2>
 
 		<article
-			class="hover:bg-primary/25 active:bg-primary/25 rounded-lg transition-all duration-500 w-full max-w-80 h-96 mx-auto p-6"
+			class="bg-primary/25 text-primary-content rounded-lg w-full max-w-80 h-96 mx-auto p-6"
 		>
 			<Integrity />
 			<h3 class="font-bold text-2xl mt-6 mb-3">Integritas</h3>
@@ -84,7 +84,7 @@
 		</article>
 
 		<article
-			class="hover:bg-primary/25 active:bg-primary/25 rounded-lg transition-all duration-500 w-full max-w-80 h-96 mx-auto p-6"
+			class="bg-primary/25 text-primary-content rounded-lg w-full max-w-80 h-96 mx-auto p-6"
 		>
 			<Compassion />
 			<h3 class="font-bold text-2xl mt-6 mb-3">Bela Rasa</h3>
@@ -96,7 +96,7 @@
 		</article>
 
 		<article
-			class="hover:bg-primary/25 active:bg-primary/25 rounded-lg transition-all duration-500 w-full max-w-80 h-96 mx-auto p-6"
+			class="bg-primary/25 text-primary-content rounded-lg w-full max-w-80 h-96 mx-auto p-6"
 		>
 			<Collaboration />
 			<h3 class="font-bold text-2xl mt-6 mb-3">Kolaborasi</h3>
@@ -107,7 +107,7 @@
 		</article>
 
 		<article
-			class="hover:bg-primary/25 active:bg-primary/25 rounded-lg transition-all duration-500 w-full max-w-80 h-96 mx-auto p-6 lg:col-start-2"
+			class="bg-primary/25 text-primary-content rounded-lg w-full max-w-80 h-96 mx-auto p-6"
 		>
 			<Education />
 			<h3 class="font-bold text-2xl mt-6 mb-3">Edukasi</h3>
