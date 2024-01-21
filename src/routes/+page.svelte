@@ -57,12 +57,12 @@
 		class="grid place-items-center max-w-[calc(512px+64px)] mx-auto px-8 pt-20 lg:px-0 lg:grid-cols-2 lg:gap-x-4 lg:max-w-max lg:mx-20 lg:pt-28 xl:mx-24 2xl:max-width"
 	>
 		<h1
-			class="text-base-content font-bold text-2xl mb-6 lg:col-span-2 lg:text-[32px] lg:mb-12"
+			class="text-base-content font-bold text-2xl mb-8 lg:col-span-2 lg:text-[32px] lg:mb-12"
 		>
 			Tentang Trois Pet Care
 		</h1>
 
-		<div class="order-2 lg:order-1 lg:max-w-[680px]">
+		<div class="order-2 lg:order-1 lg:max-w-2xl">
 			<p class="text-base-content mb-4 lg:text-lg">
 				Trois Pet Care adalah tempat pelayanan kesehatan dan kebutuhan hewan
 				peliharaan. Pelayanan kesehatan hewan ditunjang dengan dokter hewan yang
@@ -73,12 +73,16 @@
 				Selain itu, Trois Pet Care juga menyediakan berbagai kebutuhan mulai
 				dari pakan, aksesori, kandang, dan kebutuhan hewan peliharaan lainnya.
 			</p>
+
+			<a href="/tentang-kami" class="btn btn-primary mt-6">
+				Lihat Selengkapnya
+			</a>
 		</div>
 
 		<img
 			src="/blog-hero.jpg"
 			alt="Trois Pet Care"
-			class="order-1 bg-base-300 object-cover object-center rounded-lg w-full aspect-video mb-6 max-w-[512px] lg:mb-0 lg:ml-auto"
+			class="order-1 bg-base-300 object-cover object-center rounded-lg w-full aspect-video mb-6 max-w-lg lg:order-2 lg:mb-0 lg:ml-auto"
 		/>
 	</article>
 
