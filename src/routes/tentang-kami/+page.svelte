@@ -1,12 +1,18 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
 	import Collaboration from "$lib/components/icons/Collaboration.svelte";
 	import Compassion from "$lib/components/icons/Compassion.svelte";
 	import Education from "$lib/components/icons/Education.svelte";
 	import Integrity from "$lib/components/icons/Integrity.svelte";
-	import type { LayoutServerData } from "../$types";
 
-	export let data: LayoutServerData;
+	let pageURL = "";
+	let baseURL = "";
+
+	onMount(() => {
+		pageURL = window.location.href;
+		baseURL = window.location.origin;
+	});
 </script>
 
 <svelte:head>
@@ -21,8 +27,8 @@
 		title="Tentang Kami"
 		description="Trois Pet Care adalah tempat pelayanan kesehatan dan kebutuhan hewan
 		peliharaan."
-		pageURL={data.pageURL}
-		imageURL=""
+		{pageURL}
+		imageURL={baseURL + "/logo.png"}
 	/>
 </svelte:head>
 

@@ -1,14 +1,22 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import CardArticle from "$lib/components/CardArticle.svelte";
 	import LoaderSpinner from "$lib/components/LoaderSpinner.svelte";
 	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
-	import type { LayoutServerData } from "../$types";
 	import type { GetArticlesResponse } from "../../types/article";
 
-	export let data: GetArticlesResponse & LayoutServerData;
+	export let data: GetArticlesResponse;
 	let isLoading = false;
 	let nextCursor = data.next_cursor ?? "";
 	let articleContainerEl: HTMLElement;
+
+	let pageURL = "";
+	let baseURL = "";
+
+	onMount(() => {
+		pageURL = window.location.href;
+		baseURL = window.location.origin;
+	});
 
 	const loadMoreArticles = () => {
 		isLoading = true;
@@ -48,8 +56,8 @@
 	<OpenGraphMetaTags
 		title="Konten Edukasi Seputar Kesehatan Hewan"
 		description=""
-		pageURL={data.pageURL}
-		imageURL=""
+		{pageURL}
+		imageURL={baseURL + "/logo.png"}
 	/>
 </svelte:head>
 
