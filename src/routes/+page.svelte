@@ -1,19 +1,13 @@
 <script lang="ts">
-	import { onMount } from "svelte";
 	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
 	import Services from "$lib/components/Home/Services.svelte";
 	import Contact from "$lib/components/Home/Contact.svelte";
 	import OperatingHours from "$lib/components/Home/OperatingHours.svelte";
 	import Doctor from "$lib/components/Home/Doctor.svelte";
 	import CircleChevronDown from "$lib/components/icons/CircleChevronDown.svelte";
+	import type { LayoutServerData } from "./$types";
 
-	let pageURL = "";
-	let baseURL = "";
-
-	onMount(() => {
-		pageURL = window.location.href;
-		baseURL = window.location.origin;
-	});
+	export let data: LayoutServerData;
 </script>
 
 <svelte:head>
@@ -28,8 +22,8 @@
 		title="Trois Pet Care"
 		description="Trois Pet Care adalah tempat pelayanan kesehatan dan kebutuhan hewan
 		peliharaan."
-		{pageURL}
-		imageURL={baseURL + "/logo.png"}
+		pageURL={data.pageURL}
+		imageURL={data.baseURL + "/logo.png"}
 	/>
 </svelte:head>
 

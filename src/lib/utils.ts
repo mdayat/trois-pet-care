@@ -4,6 +4,16 @@ import type {
 } from "@notionhq/client/build/src/api-endpoints";
 import type { Article } from "../types/article";
 
+const getPageURL = (): string => {
+	if (typeof window === "undefined") return "";
+	return window.location.href;
+};
+
+const getBaseURL = (): string => {
+	if (typeof window === "undefined") return "";
+	return window.location.origin;
+};
+
 const joinStringToHyphen = (string: string, separator: string): string => {
 	return string.split(separator).join("-");
 };
@@ -79,6 +89,8 @@ const parsePageObjectProperties = (pageObject: PageObjectResponse): Article => {
 };
 
 export {
+	getPageURL,
+	getBaseURL,
 	joinStringToHyphen,
 	parseArticleIDFromRouteParams,
 	articleCoverImageAltFallback,

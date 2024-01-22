@@ -1,18 +1,12 @@
 <script lang="ts">
-	import { onMount } from "svelte";
 	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
 	import Collaboration from "$lib/components/icons/Collaboration.svelte";
 	import Compassion from "$lib/components/icons/Compassion.svelte";
 	import Education from "$lib/components/icons/Education.svelte";
 	import Integrity from "$lib/components/icons/Integrity.svelte";
+	import type { LayoutServerData } from "../$types";
 
-	let pageURL = "";
-	let baseURL = "";
-
-	onMount(() => {
-		pageURL = window.location.href;
-		baseURL = window.location.origin;
-	});
+	export let data: LayoutServerData;
 </script>
 
 <svelte:head>
@@ -24,11 +18,11 @@
 	/>
 
 	<OpenGraphMetaTags
-		title="Tentang Kami"
+		title="Tentang Trois Pet Care"
 		description="Trois Pet Care adalah tempat pelayanan kesehatan dan kebutuhan hewan
 		peliharaan."
-		{pageURL}
-		imageURL={baseURL + "/logo.png"}
+		pageURL={data.pageURL}
+		imageURL={data.baseURL + "/logo.png"}
 	/>
 </svelte:head>
 
@@ -36,7 +30,6 @@
 	class="base-margin mt-[calc(66px+80px)] mb-20 lg:mt-[calc(86px+112px)] lg:mb-28 2xl:max-width"
 >
 	<article
-		id="tentang-kami"
 		class="grid place-items-center max-w-lg mx-auto lg:grid-cols-2 lg:gap-x-4 lg:max-w-max"
 	>
 		<h1 class="font-bold text-2xl mb-8 lg:col-span-2 lg:text-[32px] lg:mb-12">
