@@ -7,11 +7,14 @@
 
 <svelte:head>
 	<title>Layanan Kebutuhan Hewan</title>
-	<meta name="description" content="" />
+	<meta
+		name="description"
+		content="Penuhi kebutuhan hewan peliharaan kamu melalui toko hewan kami, seperti makanan, vitamin, kandang, mainan, dan sebagainya"
+	/>
 
 	<OpenGraphMetaTags
 		title="Layanan Kebutuhan Hewan"
-		description=""
+		description="Penuhi kebutuhan hewan peliharaan kamu melalui toko hewan kami, seperti makanan, vitamin, kandang, mainan, dan sebagainya"
 		pageURL={data.pageURL}
 		imageURL={data.baseURL + "/logo.png"}
 	/>
@@ -29,15 +32,41 @@
 
 		<div class="order-2 lg:order-1 lg:max-w-2xl">
 			<p class="mb-4 lg:text-lg">
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas ipsa
-				consequatur dignissimos nobis reiciendis ratione nisi iste veritatis, ab
-				quaerat pariatur. Magnam sequi numquam ea nemo nam tempore
-				necessitatibus at.
+				Kami menyediakan layanan kebutuhan hewan yang lengkap dan beragam,
+				seperti makanan hewan yang berkualitas, koleksi mainan yang
+				menyenangkan, hingga kebutuhan mendasar seperti, vitamin, obat-obatan,
+				kandang, dan sebagainya.
 			</p>
 
 			<p class="lg:text-lg">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
-				facilis! Reiciendis.
+				Toko hewan kami tersedia baik secara <i>online</i> maupun
+				<i>offline</i>. Kunjungi toko <i>offline</i> kami dengan mengeklik
+				<a
+					href="https://maps.app.goo.gl/u4akSXyrcFLRYgEd7"
+					target="_blank"
+					rel="noopener"
+					class="link link-primary"
+				>
+					tautan ini
+				</a>
+				atau kunjungi toko <i>online</i> kami melalui
+				<a
+					href="https://www.tokopedia.com/trois-3?utm_campaign=Shop-126756939-10789193-170124&utm_source=salinlink&utm_medium=share"
+					target="_blank"
+					rel="noopener"
+					class="link link-primary"
+				>
+					Tokopedia
+				</a>
+				dan
+				<a
+					href="https://shopee.co.id/troispetshop"
+					target="_blank"
+					rel="noopener"
+					class="link link-primary"
+				>
+					Shopee</a
+				>.
 			</p>
 		</div>
 

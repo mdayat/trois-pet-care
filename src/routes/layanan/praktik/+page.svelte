@@ -7,11 +7,14 @@
 
 <svelte:head>
 	<title>Layanan Praktik Dokter Hewan</title>
-	<meta name="description" content="" />
+	<meta
+		name="description"
+		content="Mulailah perjalanan kesehatan hewan peliharaan kamu melalui pelayanan kesehatan kami yang didampingi oleh tenaga ahli berpengalaman"
+	/>
 
 	<OpenGraphMetaTags
 		title="Layanan Praktik Dokter Hewan"
-		description=""
+		description="Mulailah perjalanan kesehatan hewan peliharaan kamu melalui pelayanan kesehatan kami yang didampingi oleh tenaga ahli berpengalaman"
 		pageURL={data.pageURL}
 		imageURL={data.baseURL + "/logo.png"}
 	/>
@@ -29,15 +32,15 @@
 
 		<div class="order-2 lg:order-1 lg:max-w-2xl">
 			<p class="mb-4 lg:text-lg">
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas ipsa
-				consequatur dignissimos nobis reiciendis ratione nisi iste veritatis, ab
-				quaerat pariatur. Magnam sequi numquam ea nemo nam tempore
-				necessitatibus at.
+				Kami menyediakan pelayanan kesehatan hewan yang dilakukan oleh tenaga
+				ahli berpengalaman dengan tujuan untuk mendapatkan diagnosis yang akurat
+				melalui serangkaian pemeriksaan-pemeriksaan tertentu sehingga pasien
+				mendapatkan pengobatan yang tepat.
 			</p>
 
 			<p class="lg:text-lg">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
-				facilis! Reiciendis.
+				Pelayanan kesehatan hewan meliputi konsultasi hingga tindakan medis,
+				seperti sterilisasi, vaksinasi, dan operasi.
 			</p>
 		</div>
 

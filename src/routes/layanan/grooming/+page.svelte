@@ -7,11 +7,14 @@
 
 <svelte:head>
 	<title>Layanan Grooming</title>
-	<meta name="description" content="" />
+	<meta
+		name="description"
+		content="Jaga kesehatan hewan peliharaan kamu melalui layanan perawatan kebersihan hewan di klinik hewan kami"
+	/>
 
 	<OpenGraphMetaTags
 		title="Layanan Grooming"
-		description=""
+		description="Jaga kesehatan hewan peliharaan kamu melalui layanan perawatan kebersihan hewan di klinik hewan kami"
 		pageURL={data.pageURL}
 		imageURL={data.baseURL + "/logo.png"}
 	/>
@@ -28,16 +31,11 @@
 		</h1>
 
 		<div class="order-2 lg:order-1 lg:max-w-2xl">
-			<p class="mb-4 lg:text-lg">
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas ipsa
-				consequatur dignissimos nobis reiciendis ratione nisi iste veritatis, ab
-				quaerat pariatur. Magnam sequi numquam ea nemo nam tempore
-				necessitatibus at.
-			</p>
-
 			<p class="lg:text-lg">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero,
-				facilis! Reiciendis.
+				Kami menyediakan layanan grooming atau perawatan untuk menjaga
+				kebersihan dan kerapian hewan peliharaan. Perawatan dilakukan dengan
+				cara pemotongan kuku, pembersihan telinga, kotoran mata, serta merapikan
+				rambut disekitar anus dan dibawah telapak kaki.
 			</p>
 		</div>
 
