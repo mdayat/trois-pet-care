@@ -8,20 +8,17 @@
 	import type { LayoutServerData } from "./$types";
 
 	export let data: LayoutServerData;
+	const metaDesc =
+		"Trois Pet Care adalah tempat pelayanan kesehatan dan kebutuhan hewan peliharaan.";
 </script>
 
 <svelte:head>
 	<title>Trois Pet Care</title>
-	<meta
-		name="description"
-		content="Trois Pet Care adalah tempat pelayanan kesehatan dan kebutuhan hewan
-	peliharaan."
-	/>
+	<meta name="description" content={metaDesc} />
 
 	<OpenGraphMetaTags
 		title="Trois Pet Care"
-		description="Trois Pet Care adalah tempat pelayanan kesehatan dan kebutuhan hewan
-		peliharaan."
+		description={metaDesc}
 		pageURL={data.pageURL}
 		imageURL={data.baseURL + "/logo.png"}
 	/>
@@ -80,8 +77,8 @@
 		</div>
 
 		<img
-			src="/blog-hero.jpg"
-			alt="Trois Pet Care"
+			src="/trois-pet-care-hero.jpg"
+			alt="Keluarga Trois Pet Care"
 			class="order-1 bg-base-300 object-cover object-center rounded-lg w-full aspect-video mb-6 max-w-lg lg:order-2 lg:mb-0 lg:ml-auto"
 		/>
 	</article>
@@ -105,6 +102,6 @@
 				rgba(51, 60, 77, 0.75),
 				rgba(51, 60, 77, 0.75)
 			),
-			url("/blog-hero.jpg");
+			url("/trois-pet-care-hero.jpg");
 	}
 </style>

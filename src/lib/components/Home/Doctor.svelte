@@ -10,7 +10,7 @@
 	<article class="max-w-sm mx-auto">
 		<img
 			src="/drh-fahmi.png"
-			alt="Foto Dokter Fahmi"
+			alt="Dokter Fikri Fahmi Udin"
 			class="object-cover object-top w-64 h-64 mx-auto"
 		/>
 
@@ -29,9 +29,9 @@
 
 	<article class="max-w-sm mx-auto">
 		<img
-			src=""
-			alt="Foto Dokter Laili Salisa Masruroh"
-			class="bg-base-300 object-cover object-top w-64 h-64 mx-auto"
+			src="/drh-laili.png"
+			alt="Dokter Laili Salisa Masruroh"
+			class="object-cover object-top w-64 h-64 mx-auto"
 		/>
 
 		<div class="bg-primary text-primary-content rounded-lg h-52 p-6">
@@ -50,7 +50,7 @@
 	<article class="max-w-sm mx-auto">
 		<img
 			src="/drh-aida.png"
-			alt="Foto Dokter Alif Aida Safriya"
+			alt="Dokter Alif Aida Safriya"
 			class="object-cover object-top w-64 h-64 mx-auto"
 		/>
 
