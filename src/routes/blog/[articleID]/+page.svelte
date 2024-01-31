@@ -30,7 +30,7 @@
 	articleCoverImageURL={data.coverImageURL}
 />
 
-<main class="mx-8 mt-8 mb-16 lg:mb-20">
+<main class="mx-8 mt-8 mb-12 lg:mb-16">
 	<article id="article-content">
 		<SvelteMarkdown source={data.contents} />
 	</article>

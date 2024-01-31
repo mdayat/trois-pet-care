@@ -33,19 +33,19 @@
 
 			<ul class="flex flex-col justify-between ml-4 lg:ml-0">
 				<li>
-					<a href="/tentang-kami" class="text-base-content/90 block py-1">
+					<a href="/tentang-kami" class="text-base-content/90 block py-1.5">
 						Tentang Kami
 					</a>
 				</li>
 
 				<li>
-					<a href="/#hubungi-kami" class="text-base-content/90 block py-1">
+					<a href="/#hubungi-kami" class="text-base-content/90 block py-1.5">
 						Kontak
 					</a>
 				</li>
 
 				<li>
-					<a href="/blog" class="text-base-content/90 block py-1">Blog</a>
+					<a href="/blog" class="text-base-content/90 block py-1.5">Blog</a>
 				</li>
 			</ul>
 		</section>
@@ -57,13 +57,13 @@
 
 			<ul class="flex flex-col justify-between ml-4 lg:ml-0">
 				<li>
-					<a href="/layanan/praktik" class="text-base-content/90 block py-1">
+					<a href="/layanan/praktik" class="text-base-content/90 block py-1.5">
 						Praktik Dokter Hewan
 					</a>
 				</li>
 
 				<li>
-					<a href="/layanan/grooming" class="text-base-content/90 block py-1">
+					<a href="/layanan/grooming" class="text-base-content/90 block py-1.5">
 						Grooming
 					</a>
 				</li>
@@ -71,7 +71,7 @@
 				<li>
 					<a
 						href="/layanan/kebutuhan-hewan"
-						class="text-base-content/90 block py-1"
+						class="text-base-content/90 block py-1.5"
 					>
 						Kebutuhan Hewan
 					</a>
@@ -88,7 +88,7 @@
 						href="https://maps.app.goo.gl/u4akSXyrcFLRYgEd7"
 						target="_blank"
 						rel="noopener"
-						class="text-base-content/90 block py-1"
+						class="text-base-content/90 block py-1.5"
 					>
 						Alamat
 					</a>
@@ -99,7 +99,7 @@
 						href="https://www.tokopedia.com/trois-3?utm_campaign=Shop-126756939-10789193-170124&utm_source=salinlink&utm_medium=share"
 						target="_blank"
 						rel="noopener"
-						class="text-base-content/90 block py-1"
+						class="text-base-content/90 block py-1.5"
 					>
 						Tokopedia
 					</a>
@@ -110,7 +110,7 @@
 						href="https://shopee.co.id/troispetshop"
 						target="_blank"
 						rel="noopener"
-						class="text-base-content/90 block py-1"
+						class="text-base-content/90 block py-1.5"
 					>
 						Shopee
 					</a>

@@ -52,7 +52,7 @@
 </script>
 
 <header
-	class="px-8 max-w-[512px] mt-[calc(60px+64px)] mx-auto lg:mt-[calc(72px+80px)] lg:px-0 lg:max-w-[680px]"
+	class="px-8 max-w-[512px] mt-[calc(66px+48px)] mx-auto lg:mt-[calc(86px+64px)] lg:px-0 lg:max-w-[680px]"
 >
 	<div class="breadcrumbs mb-4">
 		<ul>

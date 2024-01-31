@@ -2,6 +2,7 @@
 	import CardArticle from "$lib/components/CardArticle.svelte";
 	import LoaderSpinner from "$lib/components/LoaderSpinner.svelte";
 	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
+	import FaceFrown from "$lib/components/icons/FaceFrown.svelte";
 	import type { GetArticlesResponse } from "../../types/article";
 	import type { LayoutServerData } from "../$types";
 
@@ -9,6 +10,8 @@
 	let isLoading = false;
 	let nextCursor = data.next_cursor ?? "";
 	let articleContainerEl: HTMLElement;
+	const metaDesc =
+		"Kumpulan artikel Trois Pet Care seputar kesehatan hewan peliharaan.";
 
 	const loadMoreArticles = () => {
 		isLoading = true;
@@ -41,13 +44,12 @@
 </script>
 
 <svelte:head>
-	<title>Konten Edukasi Seputar Kesehatan Hewan</title>
-	<meta name="description" content="" />
-	<meta name="author" content="Trois Pet Care" />
+	<title>Artikel Seputar Kesehatan Hewan</title>
+	<meta name="description" content={metaDesc} />
 
 	<OpenGraphMetaTags
-		title="Konten Edukasi Seputar Kesehatan Hewan"
-		description=""
+		title="Artikel Seputar Kesehatan Hewan"
+		description={metaDesc}
 		pageURL={data.pageURL}
 		imageURL={data.baseURL + "/logo.png"}
 	/>
@@ -66,35 +68,46 @@
 </header>
 
 <main
-	class="base-margin mt-[calc(66px+64px)] mb-16 lg:mt-[calc(86px+80px)] lg:mb-20 2xl:max-width"
+	class="base-margin mt-[calc(66px+48px)] mb-12 lg:mt-[calc(86px+64px)] lg:mb-16 2xl:max-width"
 >
-	<h1
-		class="text-neutral font-bold text-center text-2xl mb-6 lg:text-[32px] lg:mb-8"
-	>
-		Artikel Terkini
-	</h1>
+	{#if data.articles.length !== 0}
+		<h1
+			class="text-neutral font-bold text-center text-2xl mb-8 lg:text-[32px] lg:mb-12"
+		>
+			Artikel Terkini
+		</h1>
 
-	<div
-		class="flex flex-wrap justify-center items-center gap-6"
-		bind:this={articleContainerEl}
-	>
-		{#each data.articles as article (article.id)}
-			<CardArticle {article} />
-		{/each}
-	</div>
+		<div
+			class="flex flex-wrap justify-center items-center gap-6"
+			bind:this={articleContainerEl}
+		>
+			{#each data.articles as article (article.id)}
+				<CardArticle {article} />
+			{/each}
+		</div>
 
-	{#if nextCursor !== ""}
-		{#if isLoading}
-			<LoaderSpinner />
-		{:else}
-			<button
-				type="button"
-				class="btn btn-outline btn-primary block mx-auto mt-8"
-				on:click={loadMoreArticles}
-			>
-				Lihat lebih banyak
-			</button>
+		{#if nextCursor !== ""}
+			{#if isLoading}
+				<LoaderSpinner />
+			{:else}
+				<button
+					type="button"
+					class="btn btn-outline btn-primary block mx-auto mt-8"
+					on:click={loadMoreArticles}
+				>
+					Lihat lebih banyak
+				</button>
+			{/if}
 		{/if}
+	{:else}
+		<section
+			class="h-[256px] grid place-items-center place-content-center gap-y-6"
+		>
+			<FaceFrown />
+			<h1 class="font-bold text-center text-2xl max-w-lg">
+				Ooops... Tidak Ada Artikel Untuk Ditampilkan
+			</h1>
+		</section>
 	{/if}
 </main>
 
