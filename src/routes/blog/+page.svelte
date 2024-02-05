@@ -102,10 +102,8 @@
 	{:else}
 		<section class="">
 			<EmptyData />
-			<h1
-				class="font-bold text-center text-xl max-w-xs mx-auto lg:text-2xl lg:max-w-sm"
-			>
-				Ooops... Tidak Ada Artikel Untuk Ditampilkan
+			<h1 class="font-bold max-w-xs mx-auto">
+				Ooops... Maaf, Kami Tidak Memiliki Artikel Untuk Ditampilkan.
 			</h1>
 		</section>
 	{/if}
