@@ -8,7 +8,7 @@
 
 	export let data: LayoutServerData;
 	const metaDesc =
-		"Trois Pet Care adalah tempat pelayanan kesehatan dan kebutuhan hewan peliharaan.";
+		"Trois Pet Care adalah klinik hewan sekaligus toko hewan yang menyediakan berbagai layanan, seperti praktik dokter hewan, grooming, dan kebutuhan hewan peliharaan.";
 </script>
 
 <svelte:head>
@@ -35,14 +35,16 @@
 
 		<div class="order-2 lg:order-1 lg:max-w-2xl">
 			<p class="mb-4 lg:text-lg">
-				Trois Pet Care adalah tempat pelayanan kesehatan dan kebutuhan hewan
-				peliharaan. Pelayanan kesehatan hewan ditunjang dengan dokter hewan yang
-				berpengalaman dan fasilitas pendukungnya.
+				Trois Pet Care adalah klinik hewan sekaligus toko hewan yang menyediakan
+				berbagai layanan, seperti praktik dokter hewan dan grooming. Pelayanan
+				kesehatan hewan ditunjang dengan dokter hewan yang berpengalaman dan
+				fasilitas pendukungnya.
 			</p>
 
 			<p class="lg:text-lg">
-				Selain itu, Trois Pet Care juga menyediakan berbagai kebutuhan mulai
-				dari pakan, aksesori, kandang, dan kebutuhan hewan peliharaan lainnya.
+				Selain itu, Trois Pet Care juga menyediakan berbagai kebutuhan hewan
+				mulai dari makanan, aksesori, kandang, dan kebutuhan hewan peliharaan
+				lainnya.
 			</p>
 		</div>
 

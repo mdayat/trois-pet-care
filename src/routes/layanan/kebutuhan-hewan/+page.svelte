@@ -4,7 +4,7 @@
 
 	export let data: LayoutServerData;
 	const metaDesc =
-		"Toko hewan yang menyediakan berbagai kebutuhan hewan, seperti makanan, vitamin, kandang, mainan, dan sebagainya.";
+		"Trois Pet Care juga menyediakan berbagai kebutuhan hewan peliharaan, seperti makanan, vitamin, kandang, mainan, dan sebagainya.";
 </script>
 
 <svelte:head>
@@ -57,7 +57,7 @@
 				>
 					Tokopedia
 				</a>
-				dan
+				atau
 				<a
 					href="https://shopee.co.id/troispetshop"
 					target="_blank"

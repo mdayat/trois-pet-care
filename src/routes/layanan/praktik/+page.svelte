@@ -4,7 +4,7 @@
 
 	export let data: LayoutServerData;
 	const metaDesc =
-		"Pelayanan kesehatan hewan yang didampingi oleh tenaga ahli berpengalaman untuk memberikan pengobatan yang tepat.";
+		"Praktik dokter hewan merupakan layanan kesehatan hewan yang didampingi oleh tenaga ahli berpengalaman untuk memberikan pengobatan dan penanganan yang tepat.";
 </script>
 
 <svelte:head>
@@ -34,7 +34,7 @@
 				Kami menyediakan pelayanan kesehatan hewan yang dilakukan oleh tenaga
 				ahli berpengalaman dengan tujuan untuk mendapatkan diagnosis yang akurat
 				melalui serangkaian pemeriksaan-pemeriksaan tertentu sehingga pasien
-				mendapatkan pengobatan yang tepat.
+				mendapatkan pengobatan dan penanganan yang tepat.
 			</p>
 
 			<p class="lg:text-lg">

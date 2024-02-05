@@ -4,7 +4,7 @@
 
 	export let data: LayoutServerData;
 	const metaDesc =
-		"Pelayanan grooming untuk menjaga kesehatan, kebersihan, dan kerapian hewan peliharaan.";
+		"Grooming merupakan layanan yang bertujuan untuk menjaga kesehatan, kebersihan, dan kerapian hewan peliharaan melalui serangkaian proses.";
 </script>
 
 <svelte:head>
@@ -31,10 +31,10 @@
 
 		<div class="order-2 lg:order-1 lg:max-w-2xl">
 			<p class="lg:text-lg">
-				Kami menyediakan layanan grooming atau perawatan untuk menjaga
-				kebersihan dan kerapian hewan peliharaan. Perawatan dilakukan dengan
-				cara pemotongan kuku, pembersihan telinga, kotoran mata, serta merapikan
-				rambut disekitar anus dan dibawah telapak kaki.
+				Kami menyediakan layanan <i>grooming</i> atau perawatan untuk menjaga kebersihan
+				dan kerapian hewan peliharaan. Perawatan dilakukan dengan cara pemotongan
+				kuku, pembersihan telinga dan kotoran mata, serta merapikan rambut disekitar
+				anus dan dibawah telapak kaki.
 			</p>
 		</div>
 

@@ -27,7 +27,7 @@
 
 			<p class="text-base-content/90">
 				Pemeriksaan kesehatan hewan secara komprehensif agar dapat memberikan
-				pengobatan yang tepat.
+				pengobatan dan penanganan yang tepat.
 			</p>
 
 			<a
