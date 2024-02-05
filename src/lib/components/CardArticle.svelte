@@ -53,7 +53,7 @@
 </script>
 
 <article
-	class="group bg-base-200 shadow-lg rounded-xl cursor-pointer max-w-80 h-fit p-4"
+	class="group bg-base-200 shadow-lg rounded-xl cursor-pointer w-80 h-fit p-4"
 	on:mouseenter={focusToAnchor}
 	on:mouseleave={blurFromAnchor}
 	on:touchstart={getTouchStartPosition}
@@ -62,7 +62,7 @@
 	<img
 		src={article.coverImageURL ?? ""}
 		alt={article.title ?? articleCoverImageAltFallback(article.id)}
-		class="bg-base-300 w-full h-44 object-cover object-center rounded-lg mb-4"
+		class="bg-base-300 aspect-video object-cover object-center rounded-lg mb-4"
 	/>
 
 	<div>

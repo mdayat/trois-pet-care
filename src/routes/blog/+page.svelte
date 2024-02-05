@@ -2,7 +2,7 @@
 	import CardArticle from "$lib/components/CardArticle.svelte";
 	import LoaderSpinner from "$lib/components/LoaderSpinner.svelte";
 	import OpenGraphMetaTags from "$lib/components/OpenGraphMetaTags.svelte";
-	import FaceFrown from "$lib/components/icons/FaceFrown.svelte";
+	import EmptyData from "$lib/components/icons/EmptyData.svelte";
 	import type { GetArticlesResponse } from "../../types/article";
 	import type { LayoutServerData } from "../$types";
 
@@ -100,11 +100,11 @@
 			{/if}
 		{/if}
 	{:else}
-		<section
-			class="h-[256px] grid place-items-center place-content-center gap-y-6"
-		>
-			<FaceFrown />
-			<h1 class="font-bold text-center text-2xl max-w-lg">
+		<section class="">
+			<EmptyData />
+			<h1
+				class="font-bold text-center text-xl max-w-xs mx-auto lg:text-2xl lg:max-w-sm"
+			>
 				Ooops... Tidak Ada Artikel Untuk Ditampilkan
 			</h1>
 		</section>
